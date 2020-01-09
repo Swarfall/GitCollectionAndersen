@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		92CE800623C735C4004E4ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE800523C735C4004E4ED9 /* AppDelegate.swift */; };
 		92CE800823C735C4004E4ED9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE800723C735C4004E4ED9 /* SceneDelegate.swift */; };
-		92CE800A23C735C4004E4ED9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE800923C735C4004E4ED9 /* ViewController.swift */; };
 		92CE800D23C735C4004E4ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CE800B23C735C4004E4ED9 /* Main.storyboard */; };
 		92CE800F23C735C5004E4ED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92CE800E23C735C5004E4ED9 /* Assets.xcassets */; };
 		92CE801223C735C5004E4ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CE801023C735C5004E4ED9 /* LaunchScreen.storyboard */; };
+		92CE801F23C73845004E4ED9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE801E23C73845004E4ED9 /* MainViewController.swift */; };
+		92CE802123C73866004E4ED9 /* PresenterMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802023C73866004E4ED9 /* PresenterMain.swift */; };
+		92CE802623C73B91004E4ED9 /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802523C73B91004E4ED9 /* NumberModel.swift */; };
+		92CE802823C73CB6004E4ED9 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802723C73CB6004E4ED9 /* BaseCell.swift */; };
+		92CE802B23C73D95004E4ED9 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802923C73D95004E4ED9 /* MainCell.swift */; };
+		92CE802C23C73D95004E4ED9 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CE802A23C73D95004E4ED9 /* MainCell.xib */; };
+		92CE802F23C73DA1004E4ED9 /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802D23C73DA1004E4ED9 /* AddCell.swift */; };
+		92CE803023C73DA1004E4ED9 /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CE802E23C73DA1004E4ED9 /* AddCell.xib */; };
+		92CE803223C74E23004E4ED9 /* BaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE803123C74E23004E4ED9 /* BaseCellModel.swift */; };
+		92CE803423C750DB004E4ED9 /* PutDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE803323C750DB004E4ED9 /* PutDataCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		92CE800223C735C4004E4ED9 /* CollectionAppAndersen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionAppAndersen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CE800523C735C4004E4ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92CE800723C735C4004E4ED9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92CE800923C735C4004E4ED9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92CE800C23C735C4004E4ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92CE800E23C735C5004E4ED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92CE801123C735C5004E4ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92CE801323C735C5004E4ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92CE801E23C73845004E4ED9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		92CE802023C73866004E4ED9 /* PresenterMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterMain.swift; sourceTree = "<group>"; };
+		92CE802523C73B91004E4ED9 /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
+		92CE802723C73CB6004E4ED9 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		92CE802923C73D95004E4ED9 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		92CE802A23C73D95004E4ED9 /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
+		92CE802D23C73DA1004E4ED9 /* AddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
+		92CE802E23C73DA1004E4ED9 /* AddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCell.xib; sourceTree = "<group>"; };
+		92CE803123C74E23004E4ED9 /* BaseCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellModel.swift; sourceTree = "<group>"; };
+		92CE803323C750DB004E4ED9 /* PutDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutDataCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,88 @@
 		92CE800423C735C4004E4ED9 /* CollectionAppAndersen */ = {
 			isa = PBXGroup;
 			children = (
+				92CE801D23C7380C004E4ED9 /* Manager */,
+				92CE801C23C73800004E4ED9 /* Models */,
+				92CE801B23C737F8004E4ED9 /* Cells */,
+				92CE801A23C737ED004E4ED9 /* Presenter */,
+				92CE801923C737D9004E4ED9 /* Controllers */,
 				92CE800523C735C4004E4ED9 /* AppDelegate.swift */,
 				92CE800723C735C4004E4ED9 /* SceneDelegate.swift */,
-				92CE800923C735C4004E4ED9 /* ViewController.swift */,
-				92CE800B23C735C4004E4ED9 /* Main.storyboard */,
 				92CE800E23C735C5004E4ED9 /* Assets.xcassets */,
 				92CE801023C735C5004E4ED9 /* LaunchScreen.storyboard */,
 				92CE801323C735C5004E4ED9 /* Info.plist */,
 			);
 			path = CollectionAppAndersen;
+			sourceTree = "<group>";
+		};
+		92CE801923C737D9004E4ED9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92CE801E23C73845004E4ED9 /* MainViewController.swift */,
+				92CE800B23C735C4004E4ED9 /* Main.storyboard */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		92CE801A23C737ED004E4ED9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				92CE802023C73866004E4ED9 /* PresenterMain.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		92CE801B23C737F8004E4ED9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				92CE802223C73872004E4ED9 /* BaseCell */,
+				92CE802423C73AF7004E4ED9 /* MainCell */,
+				92CE802323C7387A004E4ED9 /* AddCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		92CE801C23C73800004E4ED9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92CE802523C73B91004E4ED9 /* NumberModel.swift */,
+				92CE803123C74E23004E4ED9 /* BaseCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92CE801D23C7380C004E4ED9 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				92CE803323C750DB004E4ED9 /* PutDataCellModel.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		92CE802223C73872004E4ED9 /* BaseCell */ = {
+			isa = PBXGroup;
+			children = (
+				92CE802723C73CB6004E4ED9 /* BaseCell.swift */,
+			);
+			path = BaseCell;
+			sourceTree = "<group>";
+		};
+		92CE802323C7387A004E4ED9 /* AddCell */ = {
+			isa = PBXGroup;
+			children = (
+				92CE802D23C73DA1004E4ED9 /* AddCell.swift */,
+				92CE802E23C73DA1004E4ED9 /* AddCell.xib */,
+			);
+			path = AddCell;
+			sourceTree = "<group>";
+		};
+		92CE802423C73AF7004E4ED9 /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				92CE802923C73D95004E4ED9 /* MainCell.swift */,
+				92CE802A23C73D95004E4ED9 /* MainCell.xib */,
+			);
+			path = MainCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +218,8 @@
 			files = (
 				92CE801223C735C5004E4ED9 /* LaunchScreen.storyboard in Resources */,
 				92CE800F23C735C5004E4ED9 /* Assets.xcassets in Resources */,
+				92CE802C23C73D95004E4ED9 /* MainCell.xib in Resources */,
+				92CE803023C73DA1004E4ED9 /* AddCell.xib in Resources */,
 				92CE800D23C735C4004E4ED9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CE800A23C735C4004E4ED9 /* ViewController.swift in Sources */,
+				92CE803223C74E23004E4ED9 /* BaseCellModel.swift in Sources */,
+				92CE801F23C73845004E4ED9 /* MainViewController.swift in Sources */,
+				92CE802F23C73DA1004E4ED9 /* AddCell.swift in Sources */,
+				92CE802B23C73D95004E4ED9 /* MainCell.swift in Sources */,
+				92CE802623C73B91004E4ED9 /* NumberModel.swift in Sources */,
 				92CE800623C735C4004E4ED9 /* AppDelegate.swift in Sources */,
+				92CE803423C750DB004E4ED9 /* PutDataCellModel.swift in Sources */,
 				92CE800823C735C4004E4ED9 /* SceneDelegate.swift in Sources */,
+				92CE802823C73CB6004E4ED9 /* BaseCell.swift in Sources */,
+				92CE802123C73866004E4ED9 /* PresenterMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

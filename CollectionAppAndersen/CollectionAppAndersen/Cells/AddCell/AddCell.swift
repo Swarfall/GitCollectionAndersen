@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddCell.swift
 //  CollectionAppAndersen
 //
 //  Created by Вячеслав Савицкий on 09.01.2020.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddCell: BaseCell {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
 
-
 }
-
