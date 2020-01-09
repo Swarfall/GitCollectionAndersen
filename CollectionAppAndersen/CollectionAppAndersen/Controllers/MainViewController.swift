@@ -43,9 +43,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AddCell.self), for: indexPath) as! AddCell
-        let mainCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MainCell.self), for: indexPath) as! MainCell
+        let cellModel = presenter.model(indexPath: indexPath.row)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: cellModel.cellType), for: indexPath) as! BaseCell
+        cell.update(model: cellModel)
+        return cell
     }
-    
-    
 }
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = CGSize(width: (self.view.frame.width / 3) - 10, height: (self.view.frame.width / 3) - 10)
+        return size
+    }
+}
+

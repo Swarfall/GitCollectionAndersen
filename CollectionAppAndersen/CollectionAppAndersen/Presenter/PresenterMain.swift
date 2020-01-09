@@ -11,13 +11,13 @@ import UIKit
 
 protocol MainProtocol {
     func countItems() -> Int
-    func model(indexPath: Int) -> BaseCellModel
+    func model(indexPath: Int) -> CellModel
     func viewDidLoad()
 }
 
 class MainPresenter {
     //MARK: - Private properties
-    private var model = [BaseCellModel]()
+    private var model = [CellModel]()
     
     //MARK: - Public properties
     var view: MainViewController?
@@ -28,7 +28,7 @@ extension MainPresenter: MainProtocol {
         return model.count
     }
     
-    func model(indexPath: Int) -> BaseCellModel {
+    func model(indexPath: Int) -> CellModel {
         return model[indexPath]
     }
     
