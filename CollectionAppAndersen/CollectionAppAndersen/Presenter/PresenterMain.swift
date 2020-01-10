@@ -19,6 +19,7 @@ protocol MainProtocol {
     func tapOnAdd()
     func afterBlock(seconds: Int, queue: DispatchQueue)
     func didPressDelete(model: CellModel)
+    //func putItemFor(indexPathItems item: Int) ->
 }
 
 class MainPresenter {
@@ -33,11 +34,14 @@ extension MainPresenter: MainProtocol {
     // MARK: Protocol funcs
     func didPressDelete(model: CellModel) {
         var index = 0
-        for _ in models {
-            index += 1
+        for deleteModel in models {
+            if deleteModel.numberText == model.numberText {
+                models.remove(at: index)
+                view?.deleteCell(by: index)
+            } else {
+              index += 1
+            }
         }
-        models.remove(at: index)
-        view?.deleteCell(by: index)
     }
     
     func afterBlock(seconds: Int, queue: DispatchQueue) {

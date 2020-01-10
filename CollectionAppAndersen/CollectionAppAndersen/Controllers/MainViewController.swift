@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     //MARK: - Private properties
     private var presenter = MainPresenter()
+    var getIndexPathItem: ((Int) -> Void)?
     
     //MARK: - LifeCicle
     override func viewDidLoad() {
@@ -57,6 +58,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        //получить индекс нажатия на ячейку для удаления
         presenter.tapOnAdd()
         reloadData()
     }
