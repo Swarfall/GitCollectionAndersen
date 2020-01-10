@@ -13,7 +13,11 @@ class MainCell: BaseCell {
     //MARK: - Outlets
     @IBOutlet weak var numberLabel: UILabel!
     
-
+    // MARK: Overriden funcs
+//    override func update(model: CellModel) {
+//        numberLabel.text = model.numberText ?? ""
+//    }
+    
     //MARK: - Actions
     @IBAction func didTapDeleteButton() {
         print("tap delete")

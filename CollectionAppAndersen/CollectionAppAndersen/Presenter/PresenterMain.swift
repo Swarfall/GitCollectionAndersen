@@ -17,6 +17,7 @@ protocol MainProtocol {
     func simulationRequest()
     func errorAlert()
     func tapOnAdd()
+    func afterBlock(seconds: Int, queue: DispatchQueue)
 }
 
 class MainPresenter {
@@ -29,25 +30,29 @@ class MainPresenter {
 
 extension MainPresenter: MainProtocol {
     // MARK: Protocol funcs
+    func afterBlock(seconds: Int, queue: DispatchQueue) {
+        queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
+            self.simulationRequest()
+            self.view?.reloadData()
+        }
+    }
+    
     func tapOnAdd() {
-        simulationRequest()
-        self.view?.reloadData()
+        let time = Int.random(in: 1...10)
+        afterBlock(seconds: time, queue: .main)
     }
     
     func errorAlert() {
         let alert = UIAlertController(title: "Error", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-    
+            
         }))
         view?.present(alert, animated: true, completion: nil)
     }
     
     func simulationRequest() {
-        let time: DispatchTime = DispatchTime(uptimeNanoseconds: UInt64(Int.random(in: 1...10)))
-        DispatchQueue.main.asyncAfter(deadline: time) {
-            let successPercent = Int.random(in: 1...100)
-            successPercent < 31 ? self.errorAlert() : self.addCell()
-        }
+        let successPercent = Int.random(in: 1...100)
+        successPercent < 31 ? self.errorAlert() : self.addCell()
     }
     
     func addCell() {
