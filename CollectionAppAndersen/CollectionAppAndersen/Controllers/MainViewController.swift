@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         reloadData()
     }
     
-    private func reloadData() {
+     func reloadData() {
         collectionView.reloadData()
     }
 }
@@ -47,6 +47,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: cellModel.cellType), for: indexPath) as! BaseCell
         cell.update(model: cellModel)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        presenter.addCell()
+        reloadData()
     }
 }
 
