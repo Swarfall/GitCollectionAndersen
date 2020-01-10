@@ -18,6 +18,7 @@ protocol MainProtocol {
     func errorAlert()
     func tapOnAdd()
     func afterBlock(seconds: Int, queue: DispatchQueue)
+    func didPressDelete(model: CellModel)
 }
 
 class MainPresenter {
@@ -30,6 +31,15 @@ class MainPresenter {
 
 extension MainPresenter: MainProtocol {
     // MARK: Protocol funcs
+    func didPressDelete(model: CellModel) {
+        var index = 0
+        for _ in models {
+            index += 1
+        }
+        models.remove(at: index)
+        view?.deleteCell(by: index)
+    }
+    
     func afterBlock(seconds: Int, queue: DispatchQueue) {
         queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
             self.simulationRequest()

@@ -10,10 +10,12 @@ import UIKit
 
 protocol BaseCellDelegate {
     func didTapDelete(with model: CellModel)
-    func update(model: CellModel)
 }
 
 class BaseCell: UICollectionViewCell, BaseCellDelegate {
+    
+    var delegate: BaseCellDelegate?
+    
     func didTapDelete(with model: CellModel) {
         
     }

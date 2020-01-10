@@ -31,8 +31,13 @@ class MainViewController: UIViewController {
         reloadData()
     }
     
+    //MARK: - Public funcs
      func reloadData() {
         collectionView.reloadData()
+    }
+    
+    func deleteCell(by index: Int) {
+        collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
     }
 }
 
@@ -44,9 +49,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellModel = presenter.model(indexPath: indexPath.row)
-        let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: cellModel.cellType), for: indexPath) as! BaseCell
-        addCell.update(model: cellModel)
-        return addCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: cellModel.cellType), for: indexPath) as! BaseCell
+        cell.delegate = self
+        cell.update(model: cellModel)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -60,6 +66,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: (self.view.frame.width / 3) - 10, height: (self.view.frame.width / 3) - 10)
         return size
+    }
+}
+
+extension MainViewController: BaseCellDelegate {
+    func didTapDelete(with model: CellModel) {
+        presenter.didPressDelete(model: model)
     }
 }
 
