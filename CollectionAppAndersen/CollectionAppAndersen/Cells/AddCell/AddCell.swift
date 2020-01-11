@@ -10,9 +10,4 @@ import UIKit
 
 class AddCell: BaseCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
 }

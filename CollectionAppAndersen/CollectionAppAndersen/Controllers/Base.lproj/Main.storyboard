@@ -35,7 +35,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="159" height="243"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddCell" id="4jd-PZ-Jj8">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddCell" id="4jd-PZ-Jj8" customClass="AddCell" customModule="CollectionAppAndersen" customModuleProvider="target">
                                         <rect key="frame" x="169" y="23" width="207" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4lu-DW-YFx">

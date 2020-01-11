@@ -10,19 +10,19 @@ import UIKit
 
 class MainCell: BaseCell {
 
-    //MARK: - Outlets
+    //MARK: - Outlet
     @IBOutlet weak var numberLabel: UILabel!
     
     //MARK: - Property
     private var model: CellModel!
     
-    //MARK: Overriden funcs
+    //MARK: Overriden func
     override func update(model: CellModel) {
         self.model = model
         numberLabel.text = model.numberText ?? ""
     }
     
-    //MARK: - Actions
+    //MARK: - Action
     @IBAction func didTapDeleteButton() {
         delegate?.didTapDelete(with: model)
     }

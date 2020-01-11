@@ -22,6 +22,7 @@ protocol MainProtocol {
     func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue, cell: CellModel)
     func tapOnDelete(model: CellModel)
     func deleteForIndex(cell: CellModel)
+    func lastIndexItem() -> Int
 }
 
 class MainPresenter {
@@ -34,6 +35,11 @@ class MainPresenter {
 
 extension MainPresenter: MainProtocol {
     // MARK: Protocol funcs
+    func lastIndexItem() -> Int {
+        let lastIndex = countItems() - 1
+        return lastIndex
+    }
+    
     func deleteForIndex(cell: CellModel) {
         var index = 0
         for deleteModel in self.models {

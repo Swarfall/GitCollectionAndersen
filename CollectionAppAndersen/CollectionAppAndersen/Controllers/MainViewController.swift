@@ -9,7 +9,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -31,7 +30,7 @@ class MainViewController: UIViewController {
     }
     
     //MARK: - Public funcs
-     func reloadData() {
+    func reloadData() {
         collectionView.reloadData()
     }
     
@@ -56,13 +55,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let lastItem = collectionView.numberOfItems(inSection: collectionView.numberOfSections - 1)
-        if indexPath.item != lastItem {
-            collectionView.allowsSelection = true
-        } else {
-            collectionView.allowsSelection = false
+        if indexPath.item == presenter.lastIndexItem() {
+            presenter.tapOnAdd()
         }
-        presenter.tapOnAdd()
     }
 }
 
