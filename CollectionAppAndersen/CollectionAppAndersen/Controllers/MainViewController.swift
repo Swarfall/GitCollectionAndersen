@@ -15,7 +15,6 @@ class MainViewController: UIViewController {
     
     //MARK: - Private properties
     private var presenter = MainPresenter()
-    var getIndexPathItem: ((Int) -> Void)?
     
     //MARK: - LifeCicle
     override func viewDidLoad() {
@@ -29,7 +28,6 @@ class MainViewController: UIViewController {
     private func configCollectionView() {
         collectionView.register(UINib(nibName: String(describing: MainCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: MainCell.self))
         collectionView.register(UINib(nibName: String(describing: AddCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: AddCell.self))
-        reloadData()
     }
     
     //MARK: - Public funcs
@@ -58,9 +56,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        //получить индекс нажатия на ячейку для удаления
+        let lastItem = collectionView.numberOfItems(inSection: collectionView.numberOfSections - 1)
+        if indexPath.item != lastItem {
+            collectionView.allowsSelection = true
+        } else {
+            collectionView.allowsSelection = false
+        }
         presenter.tapOnAdd()
-        reloadData()
     }
 }
 
@@ -73,7 +75,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainViewController: BaseCellDelegate {
     func didTapDelete(with model: CellModel) {
-        presenter.didPressDelete(model: model)
+        presenter.tapOnDelete(model: model)
     }
 }
 

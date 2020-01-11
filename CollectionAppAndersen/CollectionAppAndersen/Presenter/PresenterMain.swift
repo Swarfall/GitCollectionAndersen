@@ -14,12 +14,14 @@ protocol MainProtocol {
     func model(indexPath: Int) -> CellModel
     func viewDidLoad()
     func addCell()
-    func simulationRequest()
+    func simulationAddRequest()
+    func simulationRemoveRequest(cell: CellModel)
     func errorAlert()
     func tapOnAdd()
-    func afterBlock(seconds: Int, queue: DispatchQueue)
-    func didPressDelete(model: CellModel)
-    //func putItemFor(indexPathItems item: Int) ->
+    func afterBlockForAddCell(seconds: Int, queue: DispatchQueue)
+    func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue, cell: CellModel)
+    func tapOnDelete(model: CellModel)
+    func deleteForIndex(cell: CellModel)
 }
 
 class MainPresenter {
@@ -32,28 +34,43 @@ class MainPresenter {
 
 extension MainPresenter: MainProtocol {
     // MARK: Protocol funcs
-    func didPressDelete(model: CellModel) {
+    func deleteForIndex(cell: CellModel) {
         var index = 0
-        for deleteModel in models {
-            if deleteModel.numberText == model.numberText {
-                models.remove(at: index)
-                view?.deleteCell(by: index)
+        for deleteModel in self.models {
+            if deleteModel.numberText == cell.numberText {
+                self.models.remove(at: index)
+                self.view?.deleteCell(by: index)
+                self.view?.reloadData()
+                return
             } else {
-              index += 1
+                index += 1
             }
         }
     }
     
-    func afterBlock(seconds: Int, queue: DispatchQueue) {
+    func simulationRemoveRequest(cell: CellModel) {
+        let successPercent = Int.random(in: 1...100)
+        successPercent < 31 ? errorAlert() : deleteForIndex(cell: cell)
+    }
+    
+    func tapOnDelete(model: CellModel) {
+        afterBlockForRemoveCell(seconds: Int.random(in: 1...10), queue: .main, cell: model)
+    }
+    
+    func afterBlockForAddCell(seconds: Int, queue: DispatchQueue) {
         queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
-            self.simulationRequest()
-            self.view?.reloadData()
+            self.simulationAddRequest()
+        }
+    }
+        
+    func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue, cell: CellModel) {
+        queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
+            self.simulationRemoveRequest(cell: cell)
         }
     }
     
     func tapOnAdd() {
-        let time = Int.random(in: 1...10)
-        afterBlock(seconds: time, queue: .main)
+        self.afterBlockForAddCell(seconds: Int.random(in: 1...10), queue: .main)
     }
     
     func errorAlert() {
@@ -64,13 +81,14 @@ extension MainPresenter: MainProtocol {
         view?.present(alert, animated: true, completion: nil)
     }
     
-    func simulationRequest() {
+    func simulationAddRequest() {
         let successPercent = Int.random(in: 1...100)
-        successPercent < 31 ? self.errorAlert() : self.addCell()
+        successPercent < 31 ? errorAlert() : addCell()
     }
     
     func addCell() {
         models.insert(CellModel(cellType: MainCell.self, numberText: "\(Int.random(in: 1...100))"), at: models.startIndex)
+        view?.reloadData()
     }
     
     func countItems() -> Int {

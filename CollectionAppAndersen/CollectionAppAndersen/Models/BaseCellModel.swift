@@ -19,11 +19,9 @@ class BaseCellModel {
 
 class CellModel: BaseCellModel {
     var numberText: String?
-    var isMain: Bool
     
-    init(cellType: BaseCell.Type, numberText: String?, isMain: Bool = false) {
+    init(cellType: BaseCell.Type, numberText: String?) {
         self.numberText = numberText
-        self.isMain = isMain
         super.init(cellType: cellType)
     }
 }
