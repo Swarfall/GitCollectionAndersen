@@ -37,7 +37,7 @@ extension MainPresenter: MainProtocol {
     func deleteForIndex(cell: CellModel) {
         var index = 0
         for deleteModel in self.models {
-            if deleteModel.numberText == cell.numberText {
+            if deleteModel.uuid == cell.uuid {
                 self.models.remove(at: index)
                 self.view?.deleteCell(by: index)
                 self.view?.reloadData()
@@ -87,7 +87,7 @@ extension MainPresenter: MainProtocol {
     }
     
     func addCell() {
-        models.insert(CellModel(cellType: MainCell.self, numberText: "\(Int.random(in: 1...100))"), at: models.startIndex)
+        models.insert(CellModel(cellType: MainCell.self, numberText: "\(Int.random(in: 1...100))", uuid: UUID().uuidString.lowercased()), at: models.startIndex)
         view?.reloadData()
     }
     

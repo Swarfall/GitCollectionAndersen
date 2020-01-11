@@ -19,9 +19,11 @@ class BaseCellModel {
 
 class CellModel: BaseCellModel {
     var numberText: String?
+    var uuid: String
     
-    init(cellType: BaseCell.Type, numberText: String?) {
+    init(cellType: BaseCell.Type, numberText: String?, uuid: String) {
         self.numberText = numberText
+        self.uuid = uuid
         super.init(cellType: cellType)
     }
 }

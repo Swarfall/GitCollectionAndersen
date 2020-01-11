@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 func putDataModel() -> [CellModel] {
-    let addCell = CellModel(cellType: AddCell.self, numberText: nil)
+    let addCell = CellModel(cellType: AddCell.self, numberText: nil, uuid: UUID().uuidString.lowercased())
     return [addCell]
 }
