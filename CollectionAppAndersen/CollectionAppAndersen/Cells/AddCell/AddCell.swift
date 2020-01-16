@@ -10,4 +10,13 @@ import UIKit
 
 class AddCell: BaseCell {
 
+    var model: MainCellEntity!
+    
+    override func update(model: MainCellEntity) {
+        self.model = model
+    }
+    
+    @IBAction func didTapAddButton() {
+        model.addCompletion(self.model)
+    }
 }

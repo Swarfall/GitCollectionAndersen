@@ -9,18 +9,12 @@
 import UIKit
 
 protocol BaseCellDelegate {
-    func didTapDelete(with model: CellModel)
+    func update(model: MainCellEntity)
 }
 
-class BaseCell: UICollectionViewCell, BaseCellDelegate {
-    
-    var delegate: BaseCellDelegate?
-    
-    func didTapDelete(with model: CellModel) {
-        
-    }
-    
-    func update(model: CellModel) {
+public class BaseCell: UICollectionViewCell, BaseCellDelegate {
+    //MARK: - Delegate funcs
+    func update(model: MainCellEntity) {
         
     }
 }

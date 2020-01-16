@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NumberModel {
+public class NumberEntity {
     let title: String
     
     init(title: String) {

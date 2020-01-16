@@ -33,9 +33,18 @@
                                 </constraints>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <action selector="didTapDeleteButton" destination="gTV-IL-0wX" eventType="touchUpInside" id="wge-U2-t9E"/>
+                                    <action selector="didTapDeleteButton" destination="gTV-IL-0wX" eventType="touchUpInside" id="pIg-5n-0Wj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;time&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPN-rd-j46">
+                                <rect key="frame" x="99" y="190" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VUe-u7-mH1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -43,6 +52,8 @@
                             <constraint firstAttribute="trailing" secondItem="E0c-V8-VWj" secondAttribute="trailing" constant="8" id="GOe-qJ-xyH"/>
                             <constraint firstItem="E0c-V8-VWj" firstAttribute="top" secondItem="QMY-7b-tha" secondAttribute="top" constant="8" id="Y3y-mk-5Dc"/>
                             <constraint firstItem="E5Y-mY-thd" firstAttribute="centerY" secondItem="QMY-7b-tha" secondAttribute="centerY" id="lwX-nf-CKo"/>
+                            <constraint firstItem="LPN-rd-j46" firstAttribute="centerX" secondItem="QMY-7b-tha" secondAttribute="centerX" id="odH-cs-7D5"/>
+                            <constraint firstAttribute="bottom" secondItem="LPN-rd-j46" secondAttribute="bottom" id="umt-7A-Njz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,7 +67,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="253" height="220"/>
             <connections>
-                <outlet property="numberLabel" destination="E5Y-mY-thd" id="nbf-GF-Ex0"/>
+                <outlet property="numberLabel" destination="E5Y-mY-thd" id="skg-pE-qS9"/>
+                <outlet property="timeLabel" destination="LPN-rd-j46" id="jEb-Sa-hmX"/>
             </connections>
             <point key="canvasLocation" x="284.78260869565219" y="210.26785714285714"/>
         </collectionViewCell>

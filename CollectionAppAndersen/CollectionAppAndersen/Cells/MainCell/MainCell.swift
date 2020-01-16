@@ -8,22 +8,24 @@
 
 import UIKit
 
-class MainCell: BaseCell {
+ public class MainCell: BaseCell {
 
     //MARK: - Outlet
-    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet private weak var numberLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     //MARK: - Property
-    private var model: CellModel!
+    private var model: MainCellEntity!
     
     //MARK: Overriden func
-    override func update(model: CellModel) {
+    override func update(model: MainCellEntity) {
         self.model = model
-        numberLabel.text = model.numberText ?? ""
+        numberLabel.text = model.numberText
+        timeLabel.text = model.timeRequest
     }
     
     //MARK: - Action
-    @IBAction func didTapDeleteButton() {
-        delegate?.didTapDelete(with: model)
+    @IBAction private func didTapDeleteButton() {
+       // model.removeCompletion(model)
     }
 }

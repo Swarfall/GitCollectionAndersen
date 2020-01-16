@@ -10,10 +10,13 @@ import UIKit
 
 class MainViewController: UIViewController {
     //MARK: - Outlets
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet private weak var collectionView: UICollectionView!
+
     //MARK: - Private properties
     private var presenter = MainPresenter()
+    
+    //MARK: - Public properties
+    var activityView: UIView?
     
     //MARK: - LifeCicle
     override func viewDidLoad() {
@@ -37,6 +40,26 @@ class MainViewController: UIViewController {
     func deleteCell(by index: Int) {
         collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
     }
+    
+    func errorAlert() {
+        let alert = UIAlertController(title: "Error", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showSpinner() {
+        activityView = UIView(frame: self.view.bounds)
+        activityView?.backgroundColor = UIColor.lightGray
+        
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.center = activityView!.center
+        ai.startAnimating()
+        activityView?.addSubview(ai)
+        self.view.addSubview(activityView!)
+        
+    }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -46,18 +69,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellModel = presenter.model(indexPath: indexPath.row)
+        let cellModel = presenter.model(index: indexPath.row)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: cellModel.cellType), for: indexPath) as! BaseCell
-        cell.delegate = self
         cell.update(model: cellModel)
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        if indexPath.item == presenter.lastIndexItem() {
-            presenter.tapOnAdd()
-        }
     }
 }
 
@@ -65,12 +80,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: (self.view.frame.width / 3) - 10, height: (self.view.frame.width / 3) - 10)
         return size
-    }
-}
-
-extension MainViewController: BaseCellDelegate {
-    func didTapDelete(with model: CellModel) {
-        presenter.tapOnDelete(model: model)
     }
 }
 

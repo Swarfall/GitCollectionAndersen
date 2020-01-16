@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BaseCellModel {
+public class BaseCellEntity {
     var cellType: BaseCell.Type
     
     init(cellType: BaseCell.Type) {
@@ -17,13 +17,3 @@ class BaseCellModel {
     }
 }
 
-class CellModel: BaseCellModel {
-    var numberText: String?
-    var uuid: String
-    
-    init(cellType: BaseCell.Type, numberText: String?, uuid: String) {
-        self.numberText = numberText
-        self.uuid = uuid
-        super.init(cellType: cellType)
-    }
-}

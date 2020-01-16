@@ -11,39 +11,27 @@ import UIKit
 
 protocol MainProtocol {
     func countItems() -> Int
-    func model(indexPath: Int) -> CellModel
+    func model(index: Int) -> MainCellEntity
     func viewDidLoad()
-    func addCell()
-    func simulationAddRequest()
-    func simulationRemoveRequest(cell: CellModel)
-    func errorAlert()
     func tapOnAdd()
-    func afterBlockForAddCell(seconds: Int, queue: DispatchQueue)
-    func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue, cell: CellModel)
-    func tapOnDelete(model: CellModel)
-    func deleteForIndex(cell: CellModel)
+    func tapOnDelete(model: MainCellEntity)
     func lastIndexItem() -> Int
 }
 
 class MainPresenter {
     //MARK: - Private properties
-    private var models = [CellModel]()
+    private var models = [AddCellEntity]()
     
     //MARK: - Public properties
     var view: MainViewController?
-}
-
-extension MainPresenter: MainProtocol {
-    // MARK: Protocol funcs
-    func lastIndexItem() -> Int {
-        let lastIndex = countItems() - 1
-        return lastIndex
-    }
+    var loading: LoadingOverlay?
+    var requestManager = RequestManager()
     
-    func deleteForIndex(cell: CellModel) {
-        var index = 0
+    //MARK: Private funcs
+    private func deleteForIndex(cell: MainCellEntity) {
+       var index = 0
         for deleteModel in self.models {
-            if deleteModel.uuid == cell.uuid {
+            if deleteModel.id == cell.id {
                 self.models.remove(at: index)
                 self.view?.deleteCell(by: index)
                 self.view?.reloadData()
@@ -53,56 +41,78 @@ extension MainPresenter: MainProtocol {
             }
         }
     }
-    
-    func simulationRemoveRequest(cell: CellModel) {
+
+    private func simulationRemoveRequest(cell: MainCellEntity) {
         let successPercent = Int.random(in: 1...100)
-        successPercent < 31 ? errorAlert() : deleteForIndex(cell: cell)
+        successPercent < 31 ? view?.errorAlert() : deleteForIndex(cell: cell)
     }
     
-    func tapOnDelete(model: CellModel) {
-        afterBlockForRemoveCell(seconds: Int.random(in: 1...10), queue: .main, cell: model)
-    }
-    
-    func afterBlockForAddCell(seconds: Int, queue: DispatchQueue) {
+    private func afterBlockForAddCell(seconds: Int, queue: DispatchQueue = .main) {
         queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
-            self.simulationAddRequest()
+            self.simulationAddRequest(time: "\(seconds)")
         }
     }
         
-    func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue, cell: CellModel) {
+    private func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue = .main, cell: MainCellEntity) {
         queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
             self.simulationRemoveRequest(cell: cell)
         }
     }
     
-    func tapOnAdd() {
-        self.afterBlockForAddCell(seconds: Int.random(in: 1...10), queue: .main)
-    }
-    
-    func errorAlert() {
-        let alert = UIAlertController(title: "Error", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            
-        }))
-        view?.present(alert, animated: true, completion: nil)
-    }
-    
-    func simulationAddRequest() {
+    private func simulationAddRequest(time: String) {
         let successPercent = Int.random(in: 1...100)
-        successPercent < 31 ? errorAlert() : addCell()
+        successPercent < 31 ? view?.errorAlert() : addingCell(time: time)
     }
     
-    func addCell() {
-        models.insert(CellModel(cellType: MainCell.self, numberText: "\(Int.random(in: 1...100))", uuid: UUID().uuidString.lowercased()), at: models.startIndex)
-        view?.reloadData()
+    private func addingCell(time: String) {
+        let randomTitle: String = "\(Int.random(in: 1...100))"
+        //переделать на вайл
+        for number in models {
+            if number.numberText != randomTitle {
+                let entity = MainCellEntity(cellType: MainCell.self, numberText: number.numberText, id: UUID().uuidString.lowercased(), timeRequest: time) { (entity) in
+                    self.tapOnAdd()
+                    self.models.insert(entity, at: self.models.startIndex)
+                }
+            }
+        }
+        
+        self.view?.reloadData()
+    }
+    
+    private func putDataModel() -> [AddCellEntity] {
+        let entity = AddCellEntity(cellType: AddCell.self) { () -> AddCellEntity in
+            return AddCellEntity.init(cellType: AddCell.self) { () -> AddCellEntity in
+                
+            }
+        }
+        return [entity]
+    }
+}
+
+extension MainPresenter: MainProtocol {
+    //MARK: Protocol funcs
+    func lastIndexItem() -> Int {
+        let lastIndex = countItems() - 1
+        return lastIndex
+    }
+    
+    func tapOnDelete(model: MainCellEntity) {
+        afterBlockForRemoveCell(seconds: Int.random(in: 1...10), cell: model)
+        
+    }
+
+    func tapOnAdd() {
+        requestManager.getNumber(completion: { [weak self] (completion) in
+            self?.afterBlockForAddCell(seconds: completion)
+            }, fail: nil)
     }
     
     func countItems() -> Int {
         return models.count
     }
     
-    func model(indexPath: Int) -> CellModel {
-        return models[indexPath]
+    func model(index: Int) -> MainCellEntity {
+        return models[index]
     }
     
     func viewDidLoad() {
