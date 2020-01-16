@@ -11,7 +11,7 @@ import UIKit
 
 protocol MainProtocol {
     func countItems() -> Int
-    func model(index: Int) -> MainCellEntity
+    func model(index: Int) -> AddCellEntity // from -> MainCellEntity
     func viewDidLoad()
     func tapOnAdd()
     func tapOnDelete(model: MainCellEntity)
@@ -31,14 +31,14 @@ class MainPresenter {
     private func deleteForIndex(cell: MainCellEntity) {
        var index = 0
         for deleteModel in self.models {
-            if deleteModel.id == cell.id {
+            //if deleteModel.id == cell.id {
                 self.models.remove(at: index)
                 self.view?.deleteCell(by: index)
                 self.view?.reloadData()
                 return
-            } else {
-                index += 1
-            }
+//            } else {
+//                index += 1
+//            }
         }
     }
 
@@ -67,23 +67,24 @@ class MainPresenter {
     private func addingCell(time: String) {
         let randomTitle: String = "\(Int.random(in: 1...100))"
         //переделать на вайл
-        for number in models {
-            if number.numberText != randomTitle {
-                let entity = MainCellEntity(cellType: MainCell.self, numberText: number.numberText, id: UUID().uuidString.lowercased(), timeRequest: time) { (entity) in
-                    self.tapOnAdd()
-                    self.models.insert(entity, at: self.models.startIndex)
-                }
+        
+        while time != randomTitle {
+            let entity = MainCellEntity(cellType: MainCell.self, numberText: "\(time)", id: UUID().uuidString.lowercased(), timeRequest: time) { (entity) in
+            self.tapOnAdd()
+            //self.models.insert(entity, at: self.models.startIndex)
             }
         }
-        
         self.view?.reloadData()
     }
     
     private func putDataModel() -> [AddCellEntity] {
+//        let entity = AddCellEntity(cellType: AddCell.self) { () -> AddCellEntity in
+//            return AddCellEntity.init(cellType: AddCell.self) { () -> AddCellEntity in
+//
+//            }
+//        }
         let entity = AddCellEntity(cellType: AddCell.self) { () -> AddCellEntity in
-            return AddCellEntity.init(cellType: AddCell.self) { () -> AddCellEntity in
-                
-            }
+            AddCellEntity(cellType: AddCell.self, complition: nil)
         }
         return [entity]
     }
@@ -110,8 +111,8 @@ extension MainPresenter: MainProtocol {
     func countItems() -> Int {
         return models.count
     }
-    
-    func model(index: Int) -> MainCellEntity {
+    //  from BaseCellEntity -> AddCellEntity
+    func model(index: Int) -> AddCellEntity {
         return models[index]
     }
     

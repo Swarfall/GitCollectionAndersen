@@ -71,7 +71,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellModel = presenter.model(index: indexPath.row)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: cellModel.cellType), for: indexPath) as! BaseCell
-        cell.update(model: cellModel)
+        //cell.update(model: cellModel)
         return cell
     }
 }

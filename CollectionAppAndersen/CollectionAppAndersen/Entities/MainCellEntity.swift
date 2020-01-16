@@ -14,14 +14,14 @@ public class MainCellEntity: BaseCellEntity, Equatable {
     var timeRequest: String
     
   //  var removeCompletion: ((CellEntity) -> Void)
-    var addCompletion: ((MainCellEntity) -> Void)
+    //static var addCompletion: ((MainCellEntity) -> Void)
     
-    init(cellType: BaseCell.Type, numberText: String, id: String, timeRequest: String, addCompletion: @escaping ((MainCellEntity) -> Void)){
+    init(cellType: BaseCell.Type, numberText: String, id: String, timeRequest: String){
         self.numberText = numberText
         self.id = id
         self.timeRequest = timeRequest
       //  self.removeCompletion = removeCompletion
-        self.addCompletion = addCompletion
+       // self.addCompletion = addCompletion
         super.init(cellType: cellType)
     }
     
