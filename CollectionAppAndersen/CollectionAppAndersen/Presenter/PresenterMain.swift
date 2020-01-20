@@ -77,10 +77,10 @@ class MainPresenter {
     private func putDataModel() -> [AddCellEntity] {
         let entity = AddCellEntity(cellType: AddCell.self) {
             //self.models.append(BaseCellEntity(cellType: MainCell.self))
-            
+            self.dataForCellFromRequest()
+            self.view?.reloadData()
         }
-        self.dataForCellFromRequest()
-        self.view?.reloadData()
+        
         return [entity]
     }
 }

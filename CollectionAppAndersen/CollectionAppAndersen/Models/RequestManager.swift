@@ -33,17 +33,23 @@ extension RequestManager: RequestManagerProtocol {
         let lockQueue = NSLock()
         let seconds = randomNumber(to: maxSecondsRequest)
         var random = randomNumber(to: maxRandomNumber)
-        var randomFlag = true
+        var errorFlag = true
+        var indexNumbersArr = 0
         lockQueue.lock()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
-            while randomFlag {
+            while errorFlag {
                 if random > self.chanceError {
-                    if self.numbers.capacity == random {
+                    if self.numbers.count < indexNumbersArr {
+                    if self.numbers[0] == random {
+                        indexNumbersArr += 1
                         random = self.randomNumber(to: self.maxRandomNumber)
                     } else {
                         self.numbers.append(random)
                         number(random)
-                        randomFlag = false
+                        errorFlag = false
+                    }
+                    } else {
+                        print("self.numbers.count > indexNumbersArr")
                     }
                 } else {
                  fail("Error 100500")
