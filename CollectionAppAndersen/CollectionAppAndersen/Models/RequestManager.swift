@@ -36,7 +36,6 @@ extension RequestManager: RequestManagerProtocol {
         var randomFlag = true
         lockQueue.lock()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
-            lockQueue.unlock()
             while randomFlag {
                 if random > self.chanceError {
                     if self.numbers.capacity == random {
@@ -51,5 +50,6 @@ extension RequestManager: RequestManagerProtocol {
                 }
             }
         }
+        lockQueue.unlock()
     }
 }
