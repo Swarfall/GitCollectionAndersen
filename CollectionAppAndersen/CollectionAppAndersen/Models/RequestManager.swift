@@ -14,8 +14,11 @@ protocol RequestManagerProtocol {
 }
 
 class RequestManager {
-    //MARK: - Private property
+    //MARK: - Private properties
     private var numbers = [Int]()
+    let maxSecondsRequest = 10
+    let maxRandomNumber = 100
+    let chanceError = 30
     
     //MARK: - Private func
     private func randomNumber(from: Int = 1, to: Int) -> Int {
@@ -27,35 +30,24 @@ class RequestManager {
 extension RequestManager: RequestManagerProtocol {
     //MARK: - Protocol func
     func getNumber(number: @escaping (Int) -> Void, fail: @escaping (String) -> Void, timeRequest: @escaping (Int) -> Void) {
-        let seconds = randomNumber(to: 10)
-        var random = randomNumber(to: 100)
+        let lockQueue = NSLock()
+        let seconds = randomNumber(to: maxSecondsRequest)
+        var random = randomNumber(to: maxRandomNumber)
         var randomFlag = true
+        lockQueue.lock()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
-//            if random > 30 {
-//                for available in self.numbers {
-//                    if available == random {
-//                        random = self.randomNumber(to: 100)
-//                    } else {
-//                        number(available)
-//                    }
-//                }
-//            } else {
-//                fail("Error")
-//            }
-            
+            lockQueue.unlock()
             while randomFlag {
-                if random > 30 {
-                    for available in self.numbers {
-                        if available == random {
-                            random = self.randomNumber(to: 100)
-                        } else {
-                            self.numbers.append(random)
-                            randomFlag = false
-                        }
+                if random > self.chanceError {
+                    if self.numbers.capacity == random {
+                        random = self.randomNumber(to: self.maxRandomNumber)
+                    } else {
+                        self.numbers.append(random)
+                        number(random)
+                        randomFlag = false
                     }
                 } else {
-                    fail("Error")
-                    
+                 fail("Error 100500")
                 }
             }
         }

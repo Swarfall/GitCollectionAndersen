@@ -77,10 +77,10 @@ class MainPresenter {
     private func putDataModel() -> [AddCellEntity] {
         let entity = AddCellEntity(cellType: AddCell.self) {
             //self.models.append(BaseCellEntity(cellType: MainCell.self))
-            self.dataForCellFromRequest()
-            self.view?.reloadData()
+            
         }
-        
+        self.dataForCellFromRequest()
+        self.view?.reloadData()
         return [entity]
     }
 }
@@ -108,7 +108,7 @@ extension MainPresenter: MainProtocol {
             reqTimeText = reqTime
         })
         
-        createNewCell(number: numberText ?? 101, timeRequest: reqTimeText ?? 101)
+        createNewCell(number: numberText ?? 123, timeRequest: reqTimeText ?? 123)
     }
     
     func countItems() -> Int {
