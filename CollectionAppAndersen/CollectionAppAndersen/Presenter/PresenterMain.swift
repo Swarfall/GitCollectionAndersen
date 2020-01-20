@@ -11,16 +11,17 @@ import UIKit
 
 protocol MainProtocol {
     func countItems() -> Int
-    func model(index: Int) -> AddCellEntity // from -> MainCellEntity
+    func model(index: Int) -> BaseCellEntity
     func viewDidLoad()
-    func tapOnAdd()
+    func dataForCellFromRequest()
     func tapOnDelete(model: MainCellEntity)
     func lastIndexItem() -> Int
 }
 
 class MainPresenter {
     //MARK: - Private properties
-    private var models = [AddCellEntity]()
+    private var models = [BaseCellEntity]()
+    private var addCell: AddCell?
     
     //MARK: - Public properties
     var view: MainViewController?
@@ -42,77 +43,79 @@ class MainPresenter {
         }
     }
 
-    private func simulationRemoveRequest(cell: MainCellEntity) {
-        let successPercent = Int.random(in: 1...100)
-        successPercent < 31 ? view?.errorAlert() : deleteForIndex(cell: cell)
-    }
+//    private func simulationRemoveRequest(cell: MainCellEntity) {
+//        let successPercent = Int.random(in: 1...100)
+//        successPercent < 31 ? view?.errorAlert() : deleteForIndex(cell: cell)
+//    }
     
-    private func afterBlockForAddCell(seconds: Int, queue: DispatchQueue = .main) {
-        queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
-            self.simulationAddRequest(time: "\(seconds)")
-        }
+    private func createNewCell(number: Int, timeRequest: Int) {
+        let newCell = MainCellEntity(cellType: MainCell.self, numberText: "\(number)", timeRequest: "\(timeRequest)")
+        models.insert(newCell, at: lastIndexItem())
     }
         
-    private func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue = .main, cell: MainCellEntity) {
-        queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
-            self.simulationRemoveRequest(cell: cell)
-        }
-    }
+//    private func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue = .main, cell: MainCellEntity) {
+//        queue.asyncAfter(deadline: .now() + .seconds(seconds)) {
+//            self.simulationRemoveRequest(cell: cell)
+//        }
     
-    private func simulationAddRequest(time: String) {
-        let successPercent = Int.random(in: 1...100)
-        successPercent < 31 ? view?.errorAlert() : addingCell(time: time)
-    }
+//    private func simulationAddRequest(time: String) {
+//        let successPercent = Int.random(in: 1...100)
+//        successPercent < 31 ? view?.errorAlert() : addingCell(time: time)
+//    }
     
-    private func addingCell(time: String) {
-        let randomTitle: String = "\(Int.random(in: 1...100))"
-        //переделать на вайл
-        
-        while time != randomTitle {
-            let entity = MainCellEntity(cellType: MainCell.self, numberText: "\(time)", id: UUID().uuidString.lowercased(), timeRequest: time) { (entity) in
-            self.tapOnAdd()
-            //self.models.insert(entity, at: self.models.startIndex)
-            }
-        }
-        self.view?.reloadData()
-    }
-    
-    private func putDataModel() -> [AddCellEntity] {
-//        let entity = AddCellEntity(cellType: AddCell.self) { () -> AddCellEntity in
-//            return AddCellEntity.init(cellType: AddCell.self) { () -> AddCellEntity in
-//
+//    private func addingCell(time: String) {
+//        let randomTitle: String = "\(Int.random(in: 1...100))"
+//        while time != randomTitle {
+//            let entity = BaseCellEntity(cellType: MainCell.self, numberText: "\(time)", id: UUID().uuidString.lowercased(), timeRequest: time) { (entity) in
+//            self.tapOnAdd()
+//            //self.models.insert(entity, at: self.models.startIndex)
 //            }
 //        }
-        let entity = AddCellEntity(cellType: AddCell.self) { () -> AddCellEntity in
-            AddCellEntity(cellType: AddCell.self, complition: nil)
+//        self.view?.reloadData()
+//    }
+    
+    private func putDataModel() -> [AddCellEntity] {
+        let entity = AddCellEntity(cellType: AddCell.self) {
+            //self.models.append(BaseCellEntity(cellType: MainCell.self))
+            self.dataForCellFromRequest()
+            self.view?.reloadData()
         }
+        
         return [entity]
     }
 }
 
 extension MainPresenter: MainProtocol {
     //MARK: Protocol funcs
+    func tapOnDelete(model: MainCellEntity) {
+        
+    }
+    
     func lastIndexItem() -> Int {
         let lastIndex = countItems() - 1
         return lastIndex
     }
-    
-    func tapOnDelete(model: MainCellEntity) {
-        afterBlockForRemoveCell(seconds: Int.random(in: 1...10), cell: model)
-        
-    }
 
-    func tapOnAdd() {
-        requestManager.getNumber(completion: { [weak self] (completion) in
-            self?.afterBlockForAddCell(seconds: completion)
-            }, fail: nil)
+    func dataForCellFromRequest() {
+        var numberText: Int?
+        var reqTimeText: Int?
+        
+        requestManager.getNumber(number: { (number) in
+            numberText = number
+        }, fail: { [weak self] (errorText) in
+            self?.view?.errorAlert(title: errorText)
+        }, timeRequest: {(reqTime) in
+            reqTimeText = reqTime
+        })
+        
+        createNewCell(number: numberText ?? 101, timeRequest: reqTimeText ?? 101)
     }
     
     func countItems() -> Int {
         return models.count
     }
-    //  from BaseCellEntity -> AddCellEntity
-    func model(index: Int) -> AddCellEntity {
+
+    func model(index: Int) -> BaseCellEntity {
         return models[index]
     }
     

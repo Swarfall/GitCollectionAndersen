@@ -10,15 +10,13 @@ import Foundation
 
 public class MainCellEntity: BaseCellEntity, Equatable {
     var numberText: String
-    var id: String
     var timeRequest: String
     
   //  var removeCompletion: ((CellEntity) -> Void)
     //static var addCompletion: ((MainCellEntity) -> Void)
     
-    init(cellType: BaseCell.Type, numberText: String, id: String, timeRequest: String){
+    init(cellType: BaseCell.Type, numberText: String, timeRequest: String){
         self.numberText = numberText
-        self.id = id
         self.timeRequest = timeRequest
       //  self.removeCompletion = removeCompletion
        // self.addCompletion = addCompletion

@@ -9,9 +9,10 @@
 import Foundation
 
 public class AddCellEntity: BaseCellEntity {
-    var complition: (() -> AddCellEntity)?
+    //MARK: - Public property
+    public var complition: (() -> Void)
     
-    init(cellType: BaseCell.Type ,complition: (() -> AddCellEntity)?) {
+    init(cellType: BaseCell.Type ,complition: @escaping (() -> Void)) {
         self.complition = complition
         super.init(cellType: cellType)
     }

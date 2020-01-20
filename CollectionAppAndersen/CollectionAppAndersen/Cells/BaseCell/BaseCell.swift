@@ -9,12 +9,15 @@
 import UIKit
 
 protocol BaseCellDelegate {
-    func update(model: MainCellEntity)
+    func update(entity: BaseCellEntity)
 }
 
-public class BaseCell: UICollectionViewCell, BaseCellDelegate {
+class BaseCell: UICollectionViewCell, BaseCellDelegate {
+    //MARK: - Private property
+    private var entity: BaseCellEntity!
+    
     //MARK: - Delegate funcs
-    func update(model: MainCellEntity) {
+    func update(entity: BaseCellEntity) {
         
     }
 }

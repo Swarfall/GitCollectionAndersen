@@ -9,16 +9,17 @@
 import UIKit
 
 class AddCell: BaseCell {
-
-    var model: AddCellEntity!
+    //MARK: - Private property
+    private var entity: AddCellEntity!
     
-    func update(model: AddCellEntity) {
-        self.model = model
+    //MARK: - Public func
+    override func update(entity: BaseCellEntity) {
+        guard let entity = entity as? AddCellEntity else { return }
+        self.entity = entity.self
     }
-    
-    @IBAction func didTapAddButton() {
-        model.complition { () -> AddCellEntity in
-            
-        }
+
+    //MARK: - Private action func
+    @IBAction private func didTapAddButton() {
+        entity.complition()
     }
 }

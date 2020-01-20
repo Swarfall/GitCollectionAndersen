@@ -8,20 +8,19 @@
 
 import UIKit
 
- public class MainCell: BaseCell {
-
+class MainCell: BaseCell {
     //MARK: - Outlet
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
     //MARK: - Property
-    private var model: MainCellEntity!
+    private var entity: MainCellEntity!
     
     //MARK: Overriden func
-    override func update(model: MainCellEntity) {
-        self.model = model
-        numberLabel.text = model.numberText
-        timeLabel.text = model.timeRequest
+    override func update(entity: BaseCellEntity) {
+        guard let entity = entity as? MainCellEntity else { return }
+        numberLabel.text = entity.numberText
+        timeLabel.text = entity.timeRequest
     }
     
     //MARK: - Action

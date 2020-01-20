@@ -41,8 +41,8 @@ class MainViewController: UIViewController {
         collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
     }
     
-    func errorAlert() {
-        let alert = UIAlertController(title: "Error", message: nil, preferredStyle: .alert)
+    func errorAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
             
         }))
@@ -71,7 +71,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellModel = presenter.model(index: indexPath.row)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: cellModel.cellType), for: indexPath) as! BaseCell
-        //cell.update(model: cellModel)
+        cell.update(entity: cellModel)
         return cell
     }
 }
