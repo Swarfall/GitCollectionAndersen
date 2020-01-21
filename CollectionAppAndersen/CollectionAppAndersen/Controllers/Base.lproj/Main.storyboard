@@ -51,7 +51,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="c81-hW-9Fx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Z5-sa-ecq"/>
                             <constraint firstItem="c81-hW-9Fx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DRe-Yg-qBc"/>

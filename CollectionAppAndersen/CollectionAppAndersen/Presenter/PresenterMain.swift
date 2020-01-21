@@ -22,11 +22,10 @@ class MainPresenter {
     //MARK: - Private properties
     private var models = [BaseCellEntity]()
     private var addCell: AddCell?
-    private var timer: Timer?
     
     //MARK: - Public properties
     var view: MainViewController?
-    var loading: LoadingOverlay?
+    var loading = LoadingOverlay()
     var requestManager = RequestManager()
     
     //MARK: Private funcs
@@ -51,8 +50,9 @@ class MainPresenter {
     
     private func createNewCell(number: Int, timeRequest: Int) {
         let newCell = MainCellEntity(cellType: MainCell.self, numberText: "\(number)", timeRequest: "\(timeRequest)")
-        models.insert(newCell, at: lastIndexItem())
-        
+        models.insert(newCell, at: 0)
+        loading.hideOverlayView()
+        self.view?.reloadData()
     }
         
 //    private func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue = .main, cell: MainCellEntity) {
@@ -98,14 +98,15 @@ extension MainPresenter: MainProtocol {
     }
 
     func dataForCellFromRequest() {
-        requestManager.getNumber(numbers: { (number, timeReq) in
-            self.createNewCell(number: number, timeRequest: timeReq)
-            self.view?.reloadData()
-        }) { (error) in
-            self.view?.errorAlert(title: error)
-        }
+        loading.showOverlay(view: self.view!.view)
+        requestManager.getNumber(numbers: { [weak self] (number, timeReq) in
+            self?.createNewCell(number: number, timeRequest: timeReq)
+        }, fail: { [weak self] (error) in
+            self?.view?.errorAlert(title: error)
+            self?.loading.hideOverlayView()
+        })
     }
-    
+        
     func countItems() -> Int {
         return models.count
     }

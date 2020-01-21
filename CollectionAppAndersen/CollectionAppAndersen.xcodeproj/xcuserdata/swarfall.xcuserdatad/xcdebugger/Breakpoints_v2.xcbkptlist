@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CB16803E-2C1C-4DFA-A187-CD94E9F01FA0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionAppAndersen/Controllers/MainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "78FE7492-3770-49D1-BDBA-E5D4DDAD6C69"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -40,14 +24,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "24291DF3-B48D-4BCC-9D7E-D0D0948FB12D"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Models/RequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "getNumber(numbers:fail:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -56,23 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "333CDD4A-40C4-4957-94DD-CAD005BA9617"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getNumber(numbers:fail:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "186CEDDD-C752-42F0-97D1-35EC9860BB1A"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Models/RequestManager.swift"
@@ -87,47 +55,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "186CEDDD-C752-42F0-97D1-35EC9860BB1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getNumber(numbers:fail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "453B5CC9-DF77-4F94-AB8E-1CE67C83C13F"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Models/RequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "getNumber(numbers:fail:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B677D9D1-A264-4E73-BA57-05914BEC545F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "getNumber(numbers:fail:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "16651007-40CB-4FA2-BFE6-606C7D492DBA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "getNumber(numbers:fail:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -136,7 +88,151 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "615DB979-85A5-4977-8F39-36C83AE0E597"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getNumber(numbers:fail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9388FB1B-E580-4ED0-A8D2-DEBF19F92931"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getNumber(numbers:fail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0314A44F-5636-4D34-B9F3-7F836DDA49F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getNumber(numbers:fail:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0314A44F-5636-4D34-B9F3-7F836DDA49F2 - 13715af6ce498e70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionAppAndersen.RequestManager.getNumber(numbers: (Swift.Int, Swift.Int) -&gt; (), fail: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Models/RequestManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "791">
+               </Location>
+               <Location
+                  uuid = "0314A44F-5636-4D34-B9F3-7F836DDA49F2 - 3dda6454e3f775d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in CollectionAppAndersen.RequestManager.getNumber(numbers: (Swift.Int, Swift.Int) -&gt; (), fail: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Models/RequestManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "335">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6580895-E44A-4969-A968-53ECEB6879DA"
             shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "createNewCell(number:timeRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6CBCC0F-4C80-4BE5-9147-FCCF6A1EBA15"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "dataForCellFromRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17E985BB-1814-4F32-81BB-64B0FC74237D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getNumber(numbers:fail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86949353-95F4-4BAD-A73A-AD12F08B47A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getNumber(numbers:fail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FD62A19-1CB2-4A93-A23B-E30159334D5E"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Models/RequestManager.swift"
@@ -151,15 +247,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B8F2069-DEC3-4E59-8BC1-248579956CF1"
-            shouldBeEnabled = "No"
+            uuid = "A9DC148B-5CF0-4ADB-97F9-DC1E8080D94A"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Models/RequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "getNumber(numbers:fail:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -167,69 +263,37 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C23E8629-D386-4003-ADD0-AEA65D6368AE"
+            uuid = "BC74C21F-6070-4002-98DE-DA21C807FD34"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "dataForCellFromRequest()"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getNumber(numbers:fail:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C23E8629-D386-4003-ADD0-AEA65D6368AE - 381bce8eb742451f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int, Swift.Int) -&gt; () in CollectionAppAndersen.MainPresenter.dataForCellFromRequest() -&gt; ()"
-                  moduleName = "CollectionAppAndersen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "260">
-               </Location>
-               <Location
-                  uuid = "C23E8629-D386-4003-ADD0-AEA65D6368AE - 3c3f331b0b1b4d66"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.String) -&gt; () in CollectionAppAndersen.MainPresenter.dataForCellFromRequest() -&gt; ()"
-                  moduleName = "CollectionAppAndersen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "93">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "29C4DFB8-BFC5-4CA9-8904-6BC3309C4DDB"
-            shouldBeEnabled = "Yes"
+            uuid = "4FBE8E34-D5E6-41CA-AC1E-7DE4BA8F8767"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "dataForCellFromRequest()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "29C4DFB8-BFC5-4CA9-8904-6BC3309C4DDB - 1dd4e63e3e4a96d9"
-                  shouldBeEnabled = "Yes"
+                  uuid = "4FBE8E34-D5E6-41CA-AC1E-7DE4BA8F8767 - 1dd4e63e3e4a96d9"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "CollectionAppAndersen.MainPresenter.dataForCellFromRequest() -&gt; ()"
@@ -238,13 +302,13 @@
                   urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "22">
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "25">
                </Location>
                <Location
-                  uuid = "29C4DFB8-BFC5-4CA9-8904-6BC3309C4DDB - 381bce8eb742451f"
-                  shouldBeEnabled = "Yes"
+                  uuid = "4FBE8E34-D5E6-41CA-AC1E-7DE4BA8F8767 - 381bce8eb742451f"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Int, Swift.Int) -&gt; () in CollectionAppAndersen.MainPresenter.dataForCellFromRequest() -&gt; ()"
@@ -255,7 +319,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "102"
                   endingLineNumber = "102"
-                  offsetFromSymbolStart = "115">
+                  offsetFromSymbolStart = "123">
                </Location>
             </Locations>
          </BreakpointContent>

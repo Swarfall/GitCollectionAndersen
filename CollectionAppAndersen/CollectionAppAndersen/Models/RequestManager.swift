@@ -30,25 +30,33 @@ class RequestManager {
 extension RequestManager: RequestManagerProtocol {
     //MARK: - Protocol func
     func getNumber(numbers: @escaping (_ numberText: Int, _ timeRequest: Int ) -> Void, fail: @escaping (String) -> Void) {
-        let seconds = randomNumber(to: maxSecondsRequest)
+        let getRandomSeconds = randomNumber(to: maxSecondsRequest)
         var getRandomNumber = randomNumber(to: maxRandomNumber)
+        let getRandomChance = randomNumber(to: maxRandomNumber)
         var errorFlag = true
         var indexNumbersArr = 0
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(getRandomSeconds)) {
             while errorFlag {
-                if getRandomNumber > self.chanceError {
-                    if self.numbers.count < indexNumbersArr {
-                        if self.numbers[0] == getRandomNumber {
-                            indexNumbersArr += 1
-                            getRandomNumber = self.randomNumber(to: self.maxRandomNumber)
+                if getRandomChance > self.chanceError {
+                    if self.numbers.count >= indexNumbersArr {
+                        if !self.numbers.isEmpty {
+                            if self.numbers[0] == getRandomNumber {
+                                indexNumbersArr += 1
+                                getRandomNumber = self.randomNumber(to: self.maxRandomNumber)
+                            } else {
+                                self.numbers.append(getRandomNumber)
+                                numbers(getRandomNumber, getRandomSeconds)
+                                errorFlag = false
+                            }
                         } else {
                             self.numbers.append(getRandomNumber)
-                            numbers(getRandomNumber, seconds)
+                            numbers(getRandomNumber, getRandomSeconds)
                             errorFlag = false
                         }
-                    } 
+                    }
                 } else {
                  fail("Error 100500")
+                   errorFlag = false
                 }
             }
         }
