@@ -30,24 +30,22 @@ class RequestManager {
 extension RequestManager: RequestManagerProtocol {
     //MARK: - Protocol func
     func getNumber(number: @escaping (Int) -> Void, fail: @escaping (String) -> Void, timeRequest: @escaping (Int) -> Void) {
-        let lockQueue = NSLock()
         let seconds = randomNumber(to: maxSecondsRequest)
         var random = randomNumber(to: maxRandomNumber)
         var errorFlag = true
         var indexNumbersArr = 0
-        lockQueue.lock()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
             while errorFlag {
                 if random > self.chanceError {
                     if self.numbers.count < indexNumbersArr {
-                    if self.numbers[0] == random {
-                        indexNumbersArr += 1
-                        random = self.randomNumber(to: self.maxRandomNumber)
-                    } else {
-                        self.numbers.append(random)
-                        number(random)
-                        errorFlag = false
-                    }
+                        if self.numbers[0] == random {
+                            indexNumbersArr += 1
+                            random = self.randomNumber(to: self.maxRandomNumber)
+                        } else {
+                            self.numbers.append(random)
+                            number(random)
+                            errorFlag = false
+                        }
                     } else {
                         print("self.numbers.count > indexNumbersArr")
                     }
@@ -56,6 +54,5 @@ extension RequestManager: RequestManagerProtocol {
                 }
             }
         }
-        lockQueue.unlock()
     }
 }
