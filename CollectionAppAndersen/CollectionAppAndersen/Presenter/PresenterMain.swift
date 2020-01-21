@@ -22,6 +22,7 @@ class MainPresenter {
     //MARK: - Private properties
     private var models = [BaseCellEntity]()
     private var addCell: AddCell?
+    private var timer: Timer?
     
     //MARK: - Public properties
     var view: MainViewController?
@@ -51,6 +52,7 @@ class MainPresenter {
     private func createNewCell(number: Int, timeRequest: Int) {
         let newCell = MainCellEntity(cellType: MainCell.self, numberText: "\(number)", timeRequest: "\(timeRequest)")
         models.insert(newCell, at: lastIndexItem())
+        
     }
         
 //    private func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue = .main, cell: MainCellEntity) {
@@ -76,7 +78,6 @@ class MainPresenter {
     
     private func putDataModel() -> [AddCellEntity] {
         let entity = AddCellEntity(cellType: AddCell.self) {
-            //self.models.append(BaseCellEntity(cellType: MainCell.self))
             self.dataForCellFromRequest()
             self.view?.reloadData()
         }
@@ -97,18 +98,12 @@ extension MainPresenter: MainProtocol {
     }
 
     func dataForCellFromRequest() {
-        var numberText: Int?
-        var reqTimeText: Int?
-        
-        requestManager.getNumber(number: { (number) in
-            numberText = number
-        }, fail: { [weak self] (errorText) in
-            self?.view?.errorAlert(title: errorText)
-        }, timeRequest: {(reqTime) in
-            reqTimeText = reqTime
-        })
-        
-        createNewCell(number: numberText ?? 123, timeRequest: reqTimeText ?? 123)
+        requestManager.getNumber(numbers: { (number, timeReq) in
+            self.createNewCell(number: number, timeRequest: timeReq)
+            self.view?.reloadData()
+        }) { (error) in
+            self.view?.errorAlert(title: error)
+        }
     }
     
     func countItems() -> Int {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol RequestManagerProtocol {
-    func getNumber(number: @escaping (Int) -> Void, fail: @escaping (String) -> Void, timeRequest: @escaping (Int) -> Void)
+    func getNumber(numbers: @escaping (_ numberText: Int, _ timeRequest: Int ) -> Void, fail: @escaping (String) -> Void)
 }
 
 class RequestManager {
@@ -29,26 +29,24 @@ class RequestManager {
 
 extension RequestManager: RequestManagerProtocol {
     //MARK: - Protocol func
-    func getNumber(number: @escaping (Int) -> Void, fail: @escaping (String) -> Void, timeRequest: @escaping (Int) -> Void) {
+    func getNumber(numbers: @escaping (_ numberText: Int, _ timeRequest: Int ) -> Void, fail: @escaping (String) -> Void) {
         let seconds = randomNumber(to: maxSecondsRequest)
-        var random = randomNumber(to: maxRandomNumber)
+        var getRandomNumber = randomNumber(to: maxRandomNumber)
         var errorFlag = true
         var indexNumbersArr = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
             while errorFlag {
-                if random > self.chanceError {
+                if getRandomNumber > self.chanceError {
                     if self.numbers.count < indexNumbersArr {
-                        if self.numbers[0] == random {
+                        if self.numbers[0] == getRandomNumber {
                             indexNumbersArr += 1
-                            random = self.randomNumber(to: self.maxRandomNumber)
+                            getRandomNumber = self.randomNumber(to: self.maxRandomNumber)
                         } else {
-                            self.numbers.append(random)
-                            number(random)
+                            self.numbers.append(getRandomNumber)
+                            numbers(getRandomNumber, seconds)
                             errorFlag = false
                         }
-                    } else {
-                        print("self.numbers.count > indexNumbersArr")
-                    }
+                    } 
                 } else {
                  fail("Error 100500")
                 }
