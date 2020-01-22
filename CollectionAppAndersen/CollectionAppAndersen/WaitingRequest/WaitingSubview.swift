@@ -11,8 +11,9 @@ import UIKit
 
 class LoadingOverlay {
 
-var overlayView = UIView()
-var activityIndicator = UIActivityIndicatorView()
+    //MARK: - Private properties
+    private var overlayView = UIView()
+    private var activityIndicator = UIActivityIndicatorView()
 
 class var shared: LoadingOverlay {
     struct Static {
@@ -21,6 +22,7 @@ class var shared: LoadingOverlay {
     return Static.instance
 }
 
+    //MARK:- Public funcs
     public func showOverlay(view: UIView) {
         overlayView.frame = CGRect(x: view.frame.width, y: view.frame.height, width: view.frame.width, height: view.frame.height)
         overlayView.center = view.center

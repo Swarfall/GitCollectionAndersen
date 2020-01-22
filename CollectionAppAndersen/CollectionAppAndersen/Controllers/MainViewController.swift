@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     
     //MARK: - Public properties
     var activityView: UIView?
+    var loading = LoadingOverlay()
     
     //MARK: - LifeCicle
     override func viewDidLoad() {
@@ -47,18 +48,6 @@ class MainViewController: UIViewController {
             
         }))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func showSpinner() {
-        activityView = UIView(frame: self.view.bounds)
-        activityView?.backgroundColor = UIColor.lightGray
-        
-        let ai = UIActivityIndicatorView(style: .large)
-        ai.center = activityView!.center
-        ai.startAnimating()
-        activityView?.addSubview(ai)
-        self.view.addSubview(activityView!)
-        
     }
 }
 

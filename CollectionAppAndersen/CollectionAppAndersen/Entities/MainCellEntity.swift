@@ -10,14 +10,14 @@ import Foundation
 
 public class MainCellEntity: BaseCellEntity, Equatable {
     var numberText: String
-    var timeRequest: String
+    var timestamp: String
     
   //  var removeCompletion: ((CellEntity) -> Void)
     //static var addCompletion: ((MainCellEntity) -> Void)
     
-    init(cellType: BaseCell.Type, numberText: String, timeRequest: String){
+    init(cellType: BaseCell.Type, numberText: String, timestamp: String){
         self.numberText = numberText
-        self.timeRequest = timeRequest
+        self.timestamp = timestamp
       //  self.removeCompletion = removeCompletion
        // self.addCompletion = addCompletion
         super.init(cellType: cellType)

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol RequestManagerProtocol {
-    func getNumber(numbers: @escaping (_ numberText: Int, _ timeRequest: Int ) -> Void, fail: @escaping (String) -> Void)
+    func getNumbers(numbers: @escaping (_ numberText: Int, _ timestamp: String ) -> Void, fail: @escaping (String) -> Void)
 }
 
 class RequestManager {
@@ -29,34 +29,25 @@ class RequestManager {
 
 extension RequestManager: RequestManagerProtocol {
     //MARK: - Protocol func
-    func getNumber(numbers: @escaping (_ numberText: Int, _ timeRequest: Int ) -> Void, fail: @escaping (String) -> Void) {
-        let getRandomSeconds = randomNumber(to: maxSecondsRequest)
-        var getRandomNumber = randomNumber(to: maxRandomNumber)
-        let getRandomChance = randomNumber(to: maxRandomNumber)
+    func getNumbers(numbers: @escaping (_ numberText: Int, _ timestamp: String ) -> Void, fail: @escaping (String) -> Void) {
+        let seconds = randomNumber(to: maxSecondsRequest)
+        var number = randomNumber(to: maxRandomNumber)
+        let chance = randomNumber(to: maxRandomNumber)
         var errorFlag = true
-        var indexNumbersArr = 0
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(getRandomSeconds)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
             while errorFlag {
-                if getRandomChance > self.chanceError {
-                    if self.numbers.count >= indexNumbersArr {
-                        if !self.numbers.isEmpty {
-                            if self.numbers[0] == getRandomNumber {
-                                indexNumbersArr += 1
-                                getRandomNumber = self.randomNumber(to: self.maxRandomNumber)
-                            } else {
-                                self.numbers.append(getRandomNumber)
-                                numbers(getRandomNumber, getRandomSeconds)
-                                errorFlag = false
-                            }
-                        } else {
-                            self.numbers.append(getRandomNumber)
-                            numbers(getRandomNumber, getRandomSeconds)
-                            errorFlag = false
-                        }
+                if chance > self.chanceError {
+                    if !self.numbers.contains(number) {
+                        self.numbers.append(number)
+                        let timestamp = Date().currentTimeMillis()
+                        numbers(number, "\(timestamp)")
+                        errorFlag = false
+                    } else {
+                        number = self.randomNumber(to: self.maxRandomNumber)
                     }
                 } else {
-                 fail("Error 100500")
-                   errorFlag = false
+                    fail("Error 100500")
+                    errorFlag = false
                 }
             }
         }

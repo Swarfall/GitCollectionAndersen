@@ -20,7 +20,7 @@ class MainCell: BaseCell {
     override func update(entity: BaseCellEntity) {
         guard let entity = entity as? MainCellEntity else { return }
         numberLabel.text = entity.numberText
-        timeLabel.text = entity.timeRequest
+        timeLabel.text = entity.timestamp
     }
     
     //MARK: - Action

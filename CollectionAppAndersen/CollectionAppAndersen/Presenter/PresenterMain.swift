@@ -13,19 +13,16 @@ protocol MainProtocol {
     func countItems() -> Int
     func model(index: Int) -> BaseCellEntity
     func viewDidLoad()
-    func dataForCellFromRequest()
     func tapOnDelete(model: MainCellEntity)
-    func lastIndexItem() -> Int
 }
 
 class MainPresenter {
     //MARK: - Private properties
     private var models = [BaseCellEntity]()
-    private var addCell: AddCell?
     
     //MARK: - Public properties
     var view: MainViewController?
-    var loading = LoadingOverlay()
+//    var loading = LoadingOverlay()
     var requestManager = RequestManager()
     
     //MARK: Private funcs
@@ -48,10 +45,10 @@ class MainPresenter {
 //        successPercent < 31 ? view?.errorAlert() : deleteForIndex(cell: cell)
 //    }
     
-    private func createNewCell(number: Int, timeRequest: Int) {
-        let newCell = MainCellEntity(cellType: MainCell.self, numberText: "\(number)", timeRequest: "\(timeRequest)")
+    private func createNewCell(number: Int, timestamp: String) {
+        let newCell = MainCellEntity(cellType: MainCell.self, numberText: "\(number)", timestamp: "\(timestamp)")
         models.insert(newCell, at: 0)
-        loading.hideOverlayView()
+        view?.loading.hideOverlayView()
         self.view?.reloadData()
     }
         
@@ -91,19 +88,15 @@ extension MainPresenter: MainProtocol {
     func tapOnDelete(model: MainCellEntity) {
         
     }
-    
-    func lastIndexItem() -> Int {
-        let lastIndex = countItems() - 1
-        return lastIndex
-    }
 
-    func dataForCellFromRequest() {
-        loading.showOverlay(view: self.view!.view)
-        requestManager.getNumber(numbers: { [weak self] (number, timeReq) in
-            self?.createNewCell(number: number, timeRequest: timeReq)
+    private func dataForCellFromRequest() {
+        guard let view = view else { return }
+        view.loading.showOverlay(view: self.view?.view ?? view.view)
+        requestManager.getNumbers(numbers: { [weak self] (number, timestamp) in
+            self?.createNewCell(number: number, timestamp: timestamp)
         }, fail: { [weak self] (error) in
             self?.view?.errorAlert(title: error)
-            self?.loading.hideOverlayView()
+            self?.view?.loading.hideOverlayView()
         })
     }
         
