@@ -49,6 +49,7 @@ extension RequestManager: RequestManagerProtocol {
                     fail("Error 100500")
                     errorFlag = false
                 }
+                
             }
         }
     }
