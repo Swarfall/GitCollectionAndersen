@@ -17,7 +17,7 @@ extension Date {
         //Date formatting
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd, MMMM yyyy HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC") //NSTimeZone(name: "UTC")
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC + 2")
         let dateString = dateFormatter.string(from: date)
         return dateString
     }
