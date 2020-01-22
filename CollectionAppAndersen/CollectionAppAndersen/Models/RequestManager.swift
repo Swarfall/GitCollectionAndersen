@@ -39,7 +39,7 @@ extension RequestManager: RequestManagerProtocol {
                 if chance > self.chanceError {
                     if !self.numbers.contains(number) {
                         self.numbers.append(number)
-                        let timestamp = Date().currentTimeMillis()
+                        let timestamp = Date().currentTimeSeconds()
                         numbers(number, "\(timestamp)")
                         errorFlag = false
                     } else {

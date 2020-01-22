@@ -9,7 +9,16 @@
 import Foundation
 
 extension Date {
-    func currentTimeMillis() -> Int64 {
-        return Int64(self.timeIntervalSince1970)
+    func currentTimeSeconds() -> String {
+        //Convert to Date
+         let interval = Int64(self.timeIntervalSince1970)
+        let date = Date(timeIntervalSince1970: TimeInterval(interval))
+
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd, MMMM yyyy HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC") //NSTimeZone(name: "UTC")
+        let dateString = dateFormatter.string(from: date)
+        return dateString
     }
 }

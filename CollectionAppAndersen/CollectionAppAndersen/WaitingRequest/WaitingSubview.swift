@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class LoadingOverlay {
-
     //MARK: - Private properties
     private var overlayView = UIView()
     private var activityIndicator = UIActivityIndicatorView()
