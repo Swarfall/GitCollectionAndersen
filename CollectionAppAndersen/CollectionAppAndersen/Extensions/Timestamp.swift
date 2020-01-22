@@ -16,8 +16,7 @@ extension Date {
 
         //Date formatting
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd, MMMM yyyy HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC + 2")
+        dateFormatter.dateFormat = "dd/mm/yy"
         let dateString = dateFormatter.string(from: date)
         return dateString
     }

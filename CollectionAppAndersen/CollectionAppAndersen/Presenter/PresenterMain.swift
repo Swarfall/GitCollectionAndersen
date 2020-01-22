@@ -22,7 +22,6 @@ class MainPresenter {
     
     //MARK: - Public properties
     var view: MainViewController?
-//    var loading = LoadingOverlay()
     var requestManager = RequestManager()
     
     //MARK: Private funcs
@@ -49,7 +48,7 @@ class MainPresenter {
         let newCell = MainCellEntity(cellType: MainCell.self, numberText: "\(number)", timestamp: "\(timestamp)")
         models.insert(newCell, at: 0)
         view?.loading.hideOverlayView()
-        self.view?.reloadData()
+        view?.reloadData()
     }
         
 //    private func afterBlockForRemoveCell(seconds: Int, queue: DispatchQueue = .main, cell: MainCellEntity) {

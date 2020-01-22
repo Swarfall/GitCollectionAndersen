@@ -16,8 +16,7 @@ class MainViewController: UIViewController {
     private var presenter = MainPresenter()
     
     //MARK: - Public properties
-    var activityView: UIView?
-    var loading = LoadingOverlay()
+    private var loading = LoadingOverlay()
     
     //MARK: - LifeCicle
     override func viewDidLoad() {
