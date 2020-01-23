@@ -20,6 +20,6 @@ class AddCell: BaseCell {
 
     //MARK: - Private action func
     @IBAction private func didTapAddButton() {
-        entity.completion(true)
+        entity.addCompletion(true)
     }
 }

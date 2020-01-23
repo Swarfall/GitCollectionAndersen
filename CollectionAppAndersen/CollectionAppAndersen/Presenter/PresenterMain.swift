@@ -38,19 +38,21 @@ class MainPresenter {
         guard let view = view else { return }
         view.showOverlay(view: view.view)
         requestManager.getNumbers(numbers: { [weak self] (number, timestamp) in
-            self?.createNewCell(number: number, timestamp: timestamp)
+            self?.doingForCell(number: number, timestamp: timestamp)
         }, fail: { (error) in
             view.errorAlert(title: error)
             view.hideOverlayView()
         })
     }
     
-    private func createNewCell(number: Int, timestamp: String) {
+    private func doingForCell(number: Int, timestamp: String) {
         guard let view = view else { return }
-        let newCell = MainCellEntity(numberText: "\(number)", timestamp: "\(timestamp)", add: true, cellType: MainCell.self) { add in
-        
+        let cell = MainCellEntity(numberText: "\(number)", timestamp: "\(timestamp)", add: true, cellType: MainCell.self) { completion in
+            if completion == false {
+                self.getDataForRemoveCell()
+            }
         }
-        models.insert(newCell, at: 0)
+        models.insert(cell, at: 0)
         view.hideOverlayView()
         view.reloadData()
     }
@@ -76,7 +78,6 @@ class MainPresenter {
         let removeCell = MainCellEntity(add: false, cellType: MainCell.self) { remove in 
             
         }
-        
     }
     
     private func removeCellFromRequest() {

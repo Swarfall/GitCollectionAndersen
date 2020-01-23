@@ -10,10 +10,10 @@ import Foundation
 
  class AddCellEntity: BaseCellEntity {
     //MARK: - Public property
-    var completion: ((Bool) -> Void)
+    var addCompletion: ((Bool) -> Void)
     
-    init(cellType: BaseCell.Type, completion: @escaping ((Bool) -> Void)) {
-        self.completion = completion
+    init(cellType: BaseCell.Type, addCompletion: @escaping ((Bool) -> Void)) {
+        self.addCompletion = addCompletion
         super.init(cellType: cellType)
     }
 }

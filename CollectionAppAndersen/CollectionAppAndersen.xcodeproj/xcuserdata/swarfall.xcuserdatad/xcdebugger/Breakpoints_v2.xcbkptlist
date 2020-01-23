@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "10641729-75FB-43C2-B142-3F5320339CF8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Cells/MainCell/MainCell.swift"
@@ -55,35 +55,292 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6E33EA44-1235-4DB4-AFD6-A348659FACE3"
+            uuid = "B75D7B9A-0391-4D91-A236-0CDA20BBB8CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "doingForCell(number:timestamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "789FA2B8-F7B5-41B9-89FB-B1901C45B049"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "getDataForRemoveCell()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "doingForCell(number:timestamp:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6E33EA44-1235-4DB4-AFD6-A348659FACE3 - e597397f2a63dd93"
+                  uuid = "789FA2B8-F7B5-41B9-89FB-B1901C45B049 - 4fd296785069c17c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
+                  symbolName = "CollectionAppAndersen.MainPresenter.(doingForCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)(number: Swift.Int, timestamp: Swift.String) -&gt; ()"
                   moduleName = "CollectionAppAndersen"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "125">
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "319">
                </Location>
                <Location
-                  uuid = "6E33EA44-1235-4DB4-AFD6-A348659FACE3 - a1dd1c93a0b5fd84"
+                  uuid = "789FA2B8-F7B5-41B9-89FB-B1901C45B049 - 59d5b21cb7a06fb4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in CollectionAppAndersen.MainPresenter.(doingForCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)(number: Swift.Int, timestamp: Swift.String) -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5A1AEDF-4F35-4B2C-A20D-9C16597CA6F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "doingForCell(number:timestamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04142F41-452C-45DB-B7E7-78E297C9E787"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "dataForAddCellFromRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB2282FD-680B-40A0-A042-D7E8EEAB35C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "dataForAddCellFromRequest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CB2282FD-680B-40A0-A042-D7E8EEAB35C3 - c8d535e160da03ce"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionAppAndersen.MainPresenter.(dataForAddCellFromRequest in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "CB2282FD-680B-40A0-A042-D7E8EEAB35C3 - eb460817603aa4fd"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int, Swift.String) -&gt; () in CollectionAppAndersen.MainPresenter.(dataForAddCellFromRequest in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "137">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F60D650-F65A-4298-9741-36A62FC37E37"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "putDataModel()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F60D650-F65A-4298-9741-36A62FC37E37 - be9d936968edc44c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionAppAndersen.MainPresenter.(putDataModel in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; Swift.Array&lt;CollectionAppAndersen.AddCellEntity&gt;"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "0F60D650-F65A-4298-9741-36A62FC37E37 - bf7103c0d4a0fe91"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in CollectionAppAndersen.MainPresenter.(putDataModel in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; Swift.Array&lt;CollectionAppAndersen.AddCellEntity&gt;"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28099868-4B9E-412D-8086-13410C78E0A6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "putDataModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7904B294-25C3-4074-BD55-2E75D95E57BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "doingForCell(number:timestamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C087AA96-AA81-47FC-9000-468F67001C3A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "dataForAddCellFromRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F836DC3-02BE-4669-8D4C-0C77824EB303"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "doingForCell(number:timestamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "036AD6F1-01F8-4D2A-A227-7D4D3D7D96F6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "removeNumber(deleteNumber:numberText:fail:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1887B43D-178A-4ED6-BE4B-6393D61D14B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getDataForRemoveCell()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1887B43D-178A-4ED6-BE4B-6393D61D14B6 - a1dd1c93a0b5fd84"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,11 +350,122 @@
                   urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "442">
+               </Location>
+               <Location
+                  uuid = "1887B43D-178A-4ED6-BE4B-6393D61D14B6 - 6bc62c1c4922fc05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; () in closure #1 (Swift.Bool) -&gt; () in CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E1E47CE-0B1E-493E-BFB2-9C025DCB5291"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getDataForRemoveCell()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7270389C-12A4-4039-A403-AC519AC5A055"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "getDataForRemoveCell()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02473E0F-392B-45CF-AF0D-CA96D35095D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "getDataForRemoveCell()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "02473E0F-392B-45CF-AF0D-CA96D35095D7 - e597397f2a63dd93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  uuid = "02473E0F-392B-45CF-AF0D-CA96D35095D7 - a1dd1c93a0b5fd84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
                   offsetFromSymbolStart = "129">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "000EB66F-1ACF-463C-BC66-D2F818F6E943"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "getDataForRemoveCell()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

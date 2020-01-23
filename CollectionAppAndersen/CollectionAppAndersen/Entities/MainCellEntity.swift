@@ -12,12 +12,12 @@ import Foundation
     //MARK: - Public propery
     var numberText: String
     var timestamp: String
-    var completion: ((Bool) -> Void)
+    var removeCompletion: ((Bool) -> Void)
     
-    init(numberText: String = "", timestamp: String = "", add: Bool, cellType: BaseCell.Type, completion: @escaping ((Bool) -> Void)) {
+    init(numberText: String = "", timestamp: String = "", add: Bool, cellType: BaseCell.Type, removeCompletion: @escaping ((Bool) -> Void)) {
         self.numberText = numberText
         self.timestamp = timestamp
-        self.completion = completion
+        self.removeCompletion = removeCompletion
         super.init(cellType: cellType)
     }
     

@@ -26,6 +26,6 @@ class MainCell: BaseCell {
     
     //MARK: - Private action func
     @IBAction private func didTapDeleteButton() {
-        entity.completion(false)
+        entity.removeCompletion(false)
     }
 }
