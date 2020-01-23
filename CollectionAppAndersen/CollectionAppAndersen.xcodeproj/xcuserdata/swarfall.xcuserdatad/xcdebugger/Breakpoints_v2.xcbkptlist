@@ -23,87 +23,40 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CFA6B825-672A-497D-9A6B-D36934E64343"
+            uuid = "4960B8AF-A399-4D25-B850-584A3B73C7B3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "getDataForRemoveCell()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C7288A27-F901-4DC8-927A-BDBD2A8ACF2C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionAppAndersen/Models/RequestManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "getForRemove(number:numberText:fail:)"
+            landmarkName = "getDataForRemoveCell(number:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5C75A880-7F4D-491F-8CA7-364F46DB300A"
+            uuid = "E83A8EA5-8B2F-45AF-81C9-6F3A681C52F4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "getDataForRemoveCell()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F9FBFB13-CA6C-4445-8DD8-C27E778E4919"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionAppAndersen/Presenter/PresenterMain.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "getDataForRemoveCell()"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "getDataForRemoveCell(number:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F9FBFB13-CA6C-4445-8DD8-C27E778E4919 - e597397f2a63dd93"
+                  uuid = "E83A8EA5-8B2F-45AF-81C9-6F3A681C52F4 - 69f46966c6034d5f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
-                  moduleName = "CollectionAppAndersen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "249">
-               </Location>
-               <Location
-                  uuid = "F9FBFB13-CA6C-4445-8DD8-C27E778E4919 - aca25a303b421c46"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; () in CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)() -&gt; ()"
+                  symbolName = "CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)(number: Swift.Int) -&gt; ()"
                   moduleName = "CollectionAppAndersen"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
@@ -111,7 +64,22 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "62"
                   endingLineNumber = "62"
-                  offsetFromSymbolStart = "361">
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  uuid = "E83A8EA5-8B2F-45AF-81C9-6F3A681C52F4 - 759492830aacea8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; () in CollectionAppAndersen.MainPresenter.(getDataForRemoveCell in _A9679AA8A824D8B70DCEBCE8DF9768D3)(number: Swift.Int) -&gt; ()"
+                  moduleName = "CollectionAppAndersen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swarfall/Desktop/GitCollectionAndersen/CollectionAppAndersen/CollectionAppAndersen/Presenter/PresenterMain.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "296">
                </Location>
             </Locations>
          </BreakpointContent>

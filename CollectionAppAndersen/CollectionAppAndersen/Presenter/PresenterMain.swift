@@ -48,7 +48,7 @@ class MainPresenter {
     private func createNewCell(number: Int, timestamp: String) {
         guard let view = view else { return }
         let cell = MainCellEntity(numberText: "\(number)", timestamp: "\(timestamp)", cellType: MainCell.self) {
-            self.getDataForRemoveCell()
+            self.getDataForRemoveCell(number: number)
         }
         models.insert(cell, at: 0)
         view.hideOverlayView()
@@ -56,21 +56,16 @@ class MainPresenter {
     }
     
     //MARK: - REMOVE
-    private func getDataForRemoveCell() { 
+    private func getDataForRemoveCell(number: Int) {
         guard let view = view else { return }
         view.showOverlay()
-        var deleteNumberText = 0
-        var index = 0
-        self.requestManager.getForRemove(number: deleteNumberText, numberText: { (deletedNumber) in
-            deleteNumberText = deletedNumber
-            for removeNumber in self.models {
-                print("removeNumber = \(removeNumber)")
-                guard let removeNumber = removeNumber as? MainCellEntity else { return }
+        self.requestManager.getForRemove(number: number, numberText: { (deletedNumber) in
+            for (index, item) in self.models.enumerated() {
+                guard let removeNumber = item as? MainCellEntity else { return }
                 if removeNumber.numberText == "\(deletedNumber)" {
                     self.models.remove(at: index)
+                    view.reloadData()
                     view.hideOverlayView()
-                } else {
-                    index += 1
                 }
             }
         }) { (error) in

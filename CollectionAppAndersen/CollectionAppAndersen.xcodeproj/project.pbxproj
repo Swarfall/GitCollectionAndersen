@@ -17,7 +17,6 @@
 		92CE801223C735C5004E4ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CE801023C735C5004E4ED9 /* LaunchScreen.storyboard */; };
 		92CE801F23C73845004E4ED9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE801E23C73845004E4ED9 /* MainViewController.swift */; };
 		92CE802123C73866004E4ED9 /* PresenterMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802023C73866004E4ED9 /* PresenterMain.swift */; };
-		92CE802623C73B91004E4ED9 /* NumberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802523C73B91004E4ED9 /* NumberEntity.swift */; };
 		92CE802823C73CB6004E4ED9 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802723C73CB6004E4ED9 /* BaseCell.swift */; };
 		92CE802B23C73D95004E4ED9 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE802923C73D95004E4ED9 /* MainCell.swift */; };
 		92CE802C23C73D95004E4ED9 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CE802A23C73D95004E4ED9 /* MainCell.xib */; };
@@ -40,7 +39,6 @@
 		92CE801323C735C5004E4ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CE801E23C73845004E4ED9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		92CE802023C73866004E4ED9 /* PresenterMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterMain.swift; sourceTree = "<group>"; };
-		92CE802523C73B91004E4ED9 /* NumberEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEntity.swift; sourceTree = "<group>"; };
 		92CE802723C73CB6004E4ED9 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		92CE802923C73D95004E4ED9 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		92CE802A23C73D95004E4ED9 /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 		92CE801C23C73800004E4ED9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				92CE802523C73B91004E4ED9 /* NumberEntity.swift */,
 				92CE803123C74E23004E4ED9 /* BaseCellEntity.swift */,
 				925E659823CDE7290093792E /* MainCellEntity.swift */,
 				925E65C723CF2B040093792E /* AddCellEntity.swift */,
@@ -252,7 +249,6 @@
 				92CE801F23C73845004E4ED9 /* MainViewController.swift in Sources */,
 				92CE802F23C73DA1004E4ED9 /* AddCell.swift in Sources */,
 				92CE802B23C73D95004E4ED9 /* MainCell.swift in Sources */,
-				92CE802623C73B91004E4ED9 /* NumberEntity.swift in Sources */,
 				92CE800623C735C4004E4ED9 /* AppDelegate.swift in Sources */,
 				925E659923CDE7290093792E /* MainCellEntity.swift in Sources */,
 				92EB292123CC58AB000CD7A8 /* RequestManager.swift in Sources */,
