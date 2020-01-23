@@ -12,7 +12,7 @@ class AddCell: BaseCell {
     //MARK: - Private property
     private var entity: AddCellEntity!
     
-    //MARK: - Public func
+    //MARK: - Overriden public func
     override func update(entity: BaseCellEntity) {
         guard let entity = entity as? AddCellEntity else { return }
         self.entity = entity.self
@@ -20,6 +20,6 @@ class AddCell: BaseCell {
 
     //MARK: - Private action func
     @IBAction private func didTapAddButton() {
-        entity.complition()
+        entity.completion(true)
     }
 }

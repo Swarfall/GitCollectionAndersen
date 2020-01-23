@@ -16,7 +16,8 @@ class MainViewController: UIViewController {
     private var presenter = MainPresenter()
     
     //MARK: - Public properties
-    private var loading = LoadingOverlay()
+    private var overlayView = UIView()
+    private var activityIndicator = UIActivityIndicatorView()
     
     //MARK: - LifeCicle
     override func viewDidLoad() {
@@ -48,6 +49,29 @@ class MainViewController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    public func showOverlay(view: UIView) {
+           overlayView.frame = CGRect(x: view.frame.width, y: view.frame.height, width: view.frame.width, height: view.frame.height)
+           overlayView.center = view.center
+           overlayView.backgroundColor = UIColor.lightGray
+           overlayView.clipsToBounds = true
+           overlayView.layer.cornerRadius = 10
+           overlayView.alpha = 0.5
+
+           activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+           activityIndicator.style = .medium
+           activityIndicator.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
+
+           overlayView.addSubview(activityIndicator)
+           view.addSubview(overlayView)
+
+           activityIndicator.startAnimating()
+       }
+
+    public func hideOverlayView() {
+           activityIndicator.stopAnimating()
+           overlayView.removeFromSuperview()
+       }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {

@@ -33,7 +33,7 @@
                                 </constraints>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <action selector="didTapDeleteButton" destination="gTV-IL-0wX" eventType="touchUpInside" id="pIg-5n-0Wj"/>
+                                    <action selector="didTapDeleteButton" destination="gTV-IL-0wX" eventType="touchUpInside" id="VxZ-iF-Bw7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;time&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPN-rd-j46">
@@ -70,7 +70,7 @@
             <size key="customSize" width="253" height="220"/>
             <connections>
                 <outlet property="numberLabel" destination="E5Y-mY-thd" id="skg-pE-qS9"/>
-                <outlet property="timeLabel" destination="LPN-rd-j46" id="jEb-Sa-hmX"/>
+                <outlet property="timeLabel" destination="LPN-rd-j46" id="K2f-RL-w2D"/>
             </connections>
             <point key="canvasLocation" x="284.78260869565219" y="210.26785714285714"/>
         </collectionViewCell>

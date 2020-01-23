@@ -8,18 +8,16 @@
 
 import Foundation
 
-public class MainCellEntity: BaseCellEntity, Equatable {
+ class MainCellEntity: BaseCellEntity, Equatable {
+    //MARK: - Public propery
     var numberText: String
     var timestamp: String
+    var completion: ((Bool) -> Void)
     
-  //  var removeCompletion: ((CellEntity) -> Void)
-    //static var addCompletion: ((MainCellEntity) -> Void)
-    
-    init(cellType: BaseCell.Type, numberText: String, timestamp: String){
+    init(numberText: String = "", timestamp: String = "", add: Bool, cellType: BaseCell.Type, completion: @escaping ((Bool) -> Void)) {
         self.numberText = numberText
         self.timestamp = timestamp
-      //  self.removeCompletion = removeCompletion
-       // self.addCompletion = addCompletion
+        self.completion = completion
         super.init(cellType: cellType)
     }
     

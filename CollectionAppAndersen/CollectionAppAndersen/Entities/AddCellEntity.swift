@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class AddCellEntity: BaseCellEntity {
+ class AddCellEntity: BaseCellEntity {
     //MARK: - Public property
-    public var complition: (() -> Void)
+    var completion: ((Bool) -> Void)
     
-    init(cellType: BaseCell.Type ,complition: @escaping (() -> Void)) {
-        self.complition = complition
+    init(cellType: BaseCell.Type, completion: @escaping ((Bool) -> Void)) {
+        self.completion = completion
         super.init(cellType: cellType)
     }
 }
