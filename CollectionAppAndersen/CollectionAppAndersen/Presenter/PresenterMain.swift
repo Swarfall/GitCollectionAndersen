@@ -26,7 +26,7 @@ class MainPresenter {
     //MARK: Private funcs
     //MARK: - ADD
     private func putDataModel() -> [AddCellEntity] {
-        let entity = AddCellEntity(cellType: AddCell.self) { _ in 
+        let entity = AddCellEntity(cellType: AddCell.self) {
             self.dataForAddCellFromRequest()
             self.view?.reloadData()
         }
@@ -36,21 +36,19 @@ class MainPresenter {
     
     private func dataForAddCellFromRequest() {
         guard let view = view else { return }
-        view.showOverlay(view: view.view)
-        requestManager.getNumbers(numbers: { [weak self] (number, timestamp) in
-            self?.doingForCell(number: number, timestamp: timestamp)
+        view.showOverlay()
+        requestManager.getData(numbers: { [weak self] (number, timestamp) in
+            self?.createNewCell(number: number, timestamp: timestamp)
         }, fail: { (error) in
             view.errorAlert(title: error)
             view.hideOverlayView()
         })
     }
     
-    private func doingForCell(number: Int, timestamp: String) {
+    private func createNewCell(number: Int, timestamp: String) {
         guard let view = view else { return }
-        let cell = MainCellEntity(numberText: "\(number)", timestamp: "\(timestamp)", add: true, cellType: MainCell.self) { completion in
-            if completion == false {
-                self.getDataForRemoveCell()
-            }
+        let cell = MainCellEntity(numberText: "\(number)", timestamp: "\(timestamp)", cellType: MainCell.self) {
+            self.getDataForRemoveCell()
         }
         models.insert(cell, at: 0)
         view.hideOverlayView()
@@ -58,31 +56,33 @@ class MainPresenter {
     }
     
     //MARK: - REMOVE
-    private func getDataForRemoveCell() {
+    private func getDataForRemoveCell() { 
         guard let view = view else { return }
-        let entity = MainCellEntity(add: false, cellType: MainCell.self) { remove in
-            view.showOverlay(view: view.view)
-            var deleteNumberText: Int = 0
-            self.requestManager.removeNumber(deleteNumber: deleteNumberText, numberText: { (number) in
-                deleteNumberText = number
-                print("")
-            }) { (error) in
-                view.errorAlert(title: error)
+        view.showOverlay()
+        var deleteNumberText = 0
+        var index = 0
+        self.requestManager.getForRemove(number: deleteNumberText, numberText: { (deletedNumber) in
+            deleteNumberText = deletedNumber
+            for removeNumber in self.models {
+                print("removeNumber = \(removeNumber)")
+                guard let removeNumber = removeNumber as? MainCellEntity else { return }
+                if removeNumber.numberText == "\(deletedNumber)" {
+                    self.models.remove(at: index)
+                    view.hideOverlayView()
+                } else {
+                    index += 1
+                }
             }
+        }) { (error) in
+            view.errorAlert(title: error)
+            view.hideOverlayView()
         }
-        view.reloadData()
-    }
-    
-    private func removeAvailableCell() {
-        guard let view = view else { return }
-        let removeCell = MainCellEntity(add: false, cellType: MainCell.self) { remove in 
-            
-        }
+        
     }
     
     private func removeCellFromRequest() {
         guard let view = view else { return }
-        view.showOverlay(view: view.view)
+        view.showOverlay()
     }
 }
 

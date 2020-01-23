@@ -12,9 +12,9 @@ import Foundation
     //MARK: - Public propery
     var numberText: String
     var timestamp: String
-    var removeCompletion: ((Bool) -> Void)
+    var removeCompletion: (() -> Void)
     
-    init(numberText: String = "", timestamp: String = "", add: Bool, cellType: BaseCell.Type, removeCompletion: @escaping ((Bool) -> Void)) {
+    init(numberText: String = "", timestamp: String = "", cellType: BaseCell.Type, removeCompletion: @escaping (() -> Void)) {
         self.numberText = numberText
         self.timestamp = timestamp
         self.removeCompletion = removeCompletion

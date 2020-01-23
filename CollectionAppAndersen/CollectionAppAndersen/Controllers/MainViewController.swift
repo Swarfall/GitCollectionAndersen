@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    public func showOverlay(view: UIView) {
+    public func showOverlay() {
            overlayView.frame = CGRect(x: view.frame.width, y: view.frame.height, width: view.frame.width, height: view.frame.height)
            overlayView.center = view.center
            overlayView.backgroundColor = UIColor.lightGray

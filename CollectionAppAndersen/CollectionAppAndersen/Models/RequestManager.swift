@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 protocol RequestManagerProtocol {
-    func getNumbers(numbers: @escaping (_ numberText: Int, _ timestamp: String ) -> Void, fail: @escaping (String) -> Void)
-    func removeNumber(deleteNumber: Int, numberText: @escaping (Int) -> Void, fail: @escaping (String) -> Void)
+    func getData(numbers: @escaping (_ numberText: Int, _ timestamp: String ) -> Void, fail: @escaping (String) -> Void)
+    func getForRemove(number: Int, numberText: @escaping (Int) -> Void, fail: @escaping (String) -> Void)
 }
 
 class RequestManager {
@@ -29,8 +29,8 @@ class RequestManager {
 }
 
 extension RequestManager: RequestManagerProtocol {
-    //MARK: - Protocol func
-    func getNumbers(numbers: @escaping (_ numberText: Int, _ timestamp: String ) -> Void, fail: @escaping (String) -> Void) {
+    //MARK: - Protocol funcs
+    func getData(numbers: @escaping (_ numberText: Int, _ timestamp: String ) -> Void, fail: @escaping (String) -> Void) {
         let seconds = randomNumber(to: maxSecondsRequest)
         var number = randomNumber(to: maxRandomNumber)
         let chance = randomNumber(to: maxRandomNumber)
@@ -50,33 +50,26 @@ extension RequestManager: RequestManagerProtocol {
                     fail("Error add")
                     errorFlag = false
                 }
-                
             }
         }
     }
     
-    func removeNumber(deleteNumber: Int, numberText: @escaping (Int) -> Void, fail: @escaping (String) -> Void) {
+    func getForRemove(number: Int, numberText: @escaping (Int) -> Void, fail: @escaping (String) -> Void) {
         let seconds = randomNumber(to: maxSecondsRequest)
         let chance = randomNumber(to: maxRandomNumber)
         var index = 0
-        var errorFlag = true
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
-            while errorFlag {
-                if chance > self.chanceError {
-                    if self.numbers.contains(deleteNumber) {
-                        for number in self.numbers {
-                            if number == deleteNumber {
-                                self.numbers.remove(at: number)
-                                errorFlag = false
-                            }
-                        }
+            if chance > self.chanceError {
+                for availableNumber in self.numbers {
+                    if number == availableNumber {
+                        self.numbers.remove(at: index)
                     } else {
                         index += 1
                     }
-                } else {
-                    fail("Error delete")
-                    errorFlag = false
                 }
+            } else {
+                fail("Error remove")
             }
         }
     }
