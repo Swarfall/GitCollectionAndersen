@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 public class BaseCellEntity {
+    //MARK: - Public property
     var cellType: BaseCell.Type
     
     init(cellType: BaseCell.Type) {

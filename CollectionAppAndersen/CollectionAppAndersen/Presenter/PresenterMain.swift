@@ -24,13 +24,11 @@ class MainPresenter {
     var requestManager = RequestManager()
     
     //MARK: Private funcs
-    //MARK: - ADD
     private func putDataModel() -> [AddCellEntity] {
         let entity = AddCellEntity(cellType: AddCell.self) {
             self.dataForAddCellFromRequest()
             self.view?.reloadData()
         }
-        
         return [entity]
     }
     
@@ -47,7 +45,7 @@ class MainPresenter {
     
     private func createNewCell(number: Int, timestamp: String) {
         guard let view = view else { return }
-        let cell = MainCellEntity(numberText: "\(number)", timestamp: "\(timestamp)", cellType: MainCell.self) {
+        let cell = MainCellEntity(numberText: "\(number)", timestamp: "\(timestamp)") {
             self.getDataForRemoveCell(number: number)
         }
         models.insert(cell, at: 0)
@@ -55,7 +53,6 @@ class MainPresenter {
         view.reloadData()
     }
     
-    //MARK: - REMOVE
     private func getDataForRemoveCell(number: Int) {
         guard let view = view else { return }
         view.showOverlay()
@@ -72,12 +69,6 @@ class MainPresenter {
             view.errorAlert(title: error)
             view.hideOverlayView()
         }
-        
-    }
-    
-    private func removeCellFromRequest() {
-        guard let view = view else { return }
-        view.showOverlay()
     }
 }
 

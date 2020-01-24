@@ -14,7 +14,7 @@ import Foundation
     var timestamp: String
     var removeCompletion: (() -> Void)
     
-    init(numberText: String = "", timestamp: String = "", cellType: BaseCell.Type, removeCompletion: @escaping (() -> Void)) {
+    init(numberText: String = "", timestamp: String = "", cellType: BaseCell.Type = MainCell.self, removeCompletion: @escaping (() -> Void)) {
         self.numberText = numberText
         self.timestamp = timestamp
         self.removeCompletion = removeCompletion

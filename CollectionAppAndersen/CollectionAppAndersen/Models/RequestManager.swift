@@ -57,12 +57,12 @@ extension RequestManager: RequestManagerProtocol {
     func getForRemove(number: Int, numberText: @escaping (Int) -> Void, fail: @escaping (String) -> Void) {
         let seconds = randomNumber(to: maxSecondsRequest)
         let chance = randomNumber(to: maxRandomNumber)
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) {
             if chance > self.chanceError {
                 for (index, item) in self.numbers.enumerated() {
                     if number == item {
                         self.numbers.remove(at: index)
+                        numberText(item)
                     }
                 }
             } else {
